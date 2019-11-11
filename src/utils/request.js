@@ -9,11 +9,10 @@ const server =axios.create({
 // 请求拦截器
 server.interceptors.request.use((config)=>{
     if(config.method=="get"){
-
-        return config.params={...config.data};
+        config.params={...config.data};
     }
     // 请求头信息
-    // config.headers["content-type"]="applicetion/json"
+    config.headers["content-type"]="applicetion/json"
 },(err)=>{
     return Promise.reject(err);
 })
