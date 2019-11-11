@@ -1,12 +1,17 @@
 <template>
     <div>
-        <h2>ww</h2>
+        <Header/>
+        <Nav/>
     </div>
 </template>
 
 <script>
+import Nav from '../../components/nav'
 export default {
-    name:"NewHouse"
+    name:"NewHouse",
+    components:{
+        Nav,
+    }
 }
 </script>
 
