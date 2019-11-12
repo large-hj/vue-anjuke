@@ -8,10 +8,10 @@ const server =axios.create({
 
 // 请求拦截器
 server.interceptors.request.use((config)=>{
-    if(config.method=="get"){
-
-        return config.params={...config.data};
+    if(config.method=="GET"){
+        config.params={...config.data};
     }
+    return config;
     // 请求头信息
     // config.headers["content-type"]="applicetion/json"
 },(err)=>{
