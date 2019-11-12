@@ -29,7 +29,7 @@ export default {
 .header {
     width: 100%;
     height: 0.54rem;
-    background: red;
+    background:#fff;
     padding: 0 0.15rem;
     display: flex;
     align-items: center;
@@ -40,7 +40,6 @@ export default {
     height:100%;
     display: flex;
     align-items: center;
-    background: pink;
     
 }
 .header .BizHeader_logo .title{
@@ -64,7 +63,6 @@ export default {
 .header .BizHeader-detail{
     width:1.57rem;
     height:100%;
-    background: pink;
     display: flex;
     align-items: center;
     justify-content: space-between

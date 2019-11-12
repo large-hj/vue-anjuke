@@ -1,15 +1,15 @@
 <template>
-    <div>
-        <h2>33</h2>
-    </div>
+  <div class="All_header">
+     <ChildHeader/>
+  </div>
 </template>
 
 <script>
 export default {
-    name:"AllHouse"
-}
+  name: "AllHouse",
+};
 </script>
 
-<style>
-    
+<style lang="scss" scoped>
+
 </style>

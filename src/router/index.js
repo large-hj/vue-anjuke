@@ -10,7 +10,17 @@ const router = new VueRouter({
             path:"/",
             redirect:"/newHouse"
         },
-        newHouse
+        newHouse,
+        {
+            name:"allHouse",
+            path:"/allHouse",
+            component:_=>import("@pages/allHouse")       
+        },
+        {
+            name:"nowSale",
+            path:"/nowSale",
+            component:_=>import("@pages/nowSale")       
+        }
     ]
 })
  export default router;

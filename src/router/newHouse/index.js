@@ -1,6 +1,8 @@
 export default {
     path:"/newHouse",
-    component:()=>import("@pages/newHouse"),
-    name:"newHouse"
+    component:_=>import("@pages/newHouse"),
+    name:"newHouse",
+   
+       
 }
     

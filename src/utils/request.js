@@ -13,6 +13,7 @@ server.interceptors.request.use((config)=>{
     }
     // 请求头信息
     config.headers["content-type"]="applicetion/json"
+    return config;
 },(err)=>{
     return Promise.reject(err);
 })

@@ -1,18 +1,21 @@
 <template>
   <div id="app">
-      <NewHose/>
+     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import NewHose from './pages/newHouse'
+import NewHouse from './pages/newHouse'
 export default {
   components:{
-    NewHose
+    NewHouse
   }
 }
 </script>
 
-<style lang="scss">
-
+<style>
+  #app{
+    height:100%;
+    overflow:auto;
+  }
 </style>
