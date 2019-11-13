@@ -1,15 +1,16 @@
 <template>
     <div>
-        <h2>33</h2>
+        112
+
     </div>
 </template>
-
 <script>
 export default {
-    name:"AllHouse"
+    
 }
 </script>
+<style scoped>
 
-<style>
-    
+
+
 </style>

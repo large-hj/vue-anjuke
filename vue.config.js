@@ -1,15 +1,17 @@
-const path=require('path');
+const path = require('path');
 
-module.exports={
+module.exports = {
     devServer:{
         proxy:{
             "/":{
                 target:"https://m.anjuke.com",
                 changeOrigin:true
-            }
+            },
+            
+
         }
     },
-    // 别名配置
+    //别名配置
     configureWebpack:{
         resolve:{
             alias:{
@@ -22,10 +24,9 @@ module.exports={
                 "@pages":path.join(__dirname,"./src/pages"),
                 "@router":path.join(__dirname,"./src/router"),
                 "@store":path.join(__dirname,"./src/store"),
-                "@utils":path.join(__dirname,"./src/utils"),
-                "@router":path.join(__dirname,"./src/router"),
-             
+                "@utils":path.join(__dirname,"./src/utils")
             }
         }
     }
 }
+
