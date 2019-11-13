@@ -41,23 +41,21 @@
       </ul>
     </div>
     <!-- list页 -->
-     <div class="main">
-    <div class="list"  v-for="(item,index) in list" :key="index">
+       <div class="list" v-for="(item,index) in list " :key="index">
             <div class="img">
-                <img :src="item.info.default_image">
-               
+                <img :src="item.image">
             </div>
              <div class="content">
-                <span class="strong">{{item.info.loupan_name}}</span>
-                <span>{{item.info.region_title}} <i>{{item.info.subregion_title}}</i><i>建面</i><i>{{item.info.huxing_area}}</i></span>
-                <p>{{item.info.unit_price}}</p>
+                <span class="strong">{{item.loupan_name_cn}}</span>
+                <span>{{item.country_name}}<i> | {{item.city_name}}</i></span>
+                <span class="ys"><i v-for="(child,index) in item.property" :key="index">{{child}}</i></span>
                 <div class="last">
-                   <span>{{item.info.display_price_type_str}}</span><span v-for="(child,index) in item.info.loupan_tags" :key="index">{{child}}</span>
+                   <span class="yue">约￥<i class="money">627</i>万元<i></i> |<i>101m</i></span>
+                   <a class="adv" >坐等收益，投资自住的不二选择</a>
                 </div>
             </div>
-      </div>
+       </div>
 
-      </div>
   </div>
 </template>
 <script>
@@ -72,16 +70,16 @@ export default {
 
   
  created(){
-     this.handleGetNewHouseList(14);
+     this.handleGetNewHouseList(2);
   
   },
   methods:{
-  async  handleGetNewHouseList(city_id){
+  async  handleGetNewHouseList(page){
       // 获取数据
-            let data = await neighborhoodApi(city_id)
+            let data = await neighborhoodApi(page)
         //页面渲染
-            this.list=data.data
-            console.log(data);
+            this.list=data.data.rows;
+            console.log(data.data.rows);
           //  this.newHouseList=data.result.rows;
        }
   }
@@ -183,19 +181,14 @@ html {
       color:#e6e6e6;
   }
   /* list */
-   .main{
-        flex-direction: column;
-        display: flex;
-    }
     .list{
         width: 100%;
-        height: 1.13rem;
-        padding:  0.15rem;
+        height: 1.33rem;
+        padding: 0.15rem;
         display: flex;
         border-bottom:1px solid #ccc;
         justify-content: flex-start;
         align-items: center;
-        margin-bottom: 0.1rem
        
         }
         .list .img{
@@ -210,25 +203,58 @@ html {
         .content{
             display: flex;
             flex-direction: column;
-            width: 80%;
+            width: 60%;
             height: 100%;
             padding-left: 0.1rem;
         }
         .content .strong{
-            font-weight: bolder;
-            font-size: 0.16rem;
+          
+            font-size: 0.14rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
         }
         .content p{
-            font-size: 0.13rem;
+            font-size: 0.12rem;
         }
         .content span{
             font-size: 0.1rem;
         }
         .content .last{
             display: flex;
+            flex-direction: column;
+
         }
         .content .last span{
             padding-right: 0.05rem;
+            color: cyan;
         }
+        .content .last span i,.content .last a{
+            color: black;
+            padding-left: 0.1rem;
+            font-size: 0.12rem;
+        }
+        .content .ys{
+            display: inline-block;
+        }
+        .content .ys i{
+          margin-top: 0.051rem;
+            display: inline-block;
+            background: #f3f8fa;
+            color: #7dafe8;
+            margin-left: 0.02rem;
+        }
+        .content .last .yue{
+            color: #e54b00;
+        }
+        .content .last .money{
+            color: red;
+        }
+        .content .last .adv{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.1rem;
+        }  
 </style>>

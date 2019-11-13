@@ -1,12 +1,11 @@
 import http from "@utils/request";
-export const neighborhoodApi=(city_id)=>http({
+export const neighborhoodApi=(page)=>http({
     method:"get",
-    url:"/home/prop/recommend",
+    url:"/haiwai/list-usa/?page=2",
    data:{
-    city_id,
+    page,
     }
 })
 
 
-
-//https://m.anjuke.com/home/prop/recommend?city_id=14
+//https://m.anjuke.com/haiwai/list-usa/?page=2
