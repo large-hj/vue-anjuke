@@ -50,7 +50,7 @@
                 <span>{{item.country_name}}<i> | {{item.city_name}}</i></span>
                 <span class="ys"><i v-for="(child,index) in item.property" :key="index">{{child}}</i></span>
                 <div class="last">
-                   <span class="yue">约￥<i class="money">627</i>万元<i></i> |<i>101m</i></span>
+                   <span class="yue">约￥<i class="money">{{item.loupan_price}}</i>万元<i></i> |<i>{{item.fangyuan_area}}m</i></span>
                    <a class="adv" >坐等收益，投资自住的不二选择</a>
                 </div>
             </div>
