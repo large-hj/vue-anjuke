@@ -2,7 +2,7 @@
     <div class="new_nav">
         <div class="search_box">
         <i class="iconfont icon-sousuo"></i>
-        <input type="search" class="search" placeholder="请输入楼盘名称或地址" />
+        <router-link tag="input" to="/search" type="search" class="search" placeholder="请输入楼盘名称或地址" />
         </div>
         <div class="iconfont icon-ditu map"></div>
     </div>
@@ -41,8 +41,9 @@ export default {
 }
 .new_nav .search_box .search {
   position: absolute;
-  width: 1.4rem;
+  width: 1.6rem;
   height: 0.36rem;
+  font-size: .14rem;
   border: 0;
   text-align: center;
   background: #f8f8f8;

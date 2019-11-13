@@ -1,7 +1,7 @@
 <template>
      <div class="main_box">
         <ul>
-            <li v-for="(item,index) in newHouseList" :key="index">
+            <router-link tag="li" :to="'/houseDetail'+item.id" v-for="(item,index) in newHouseList" :key="index">
                 <div class="main_img">
                     <img :src="item.default_image" alt="">
                 </div>
@@ -20,7 +20,8 @@
                         <span class="adv-ctx" >{{item.rank_desc}}</span>
                     </div>
                 </div>
-            </li>
+            </router-link>
+            <router-view></router-view>
         </ul>
     </div>
 </template>
@@ -40,7 +41,6 @@ export default {
    methods:{
       async  handleGetNewHouseList(cid){
             let data = await newHouseApi(cid)
-            console.log(data);
            this.newHouseList=data.result.rows;
        }
    }

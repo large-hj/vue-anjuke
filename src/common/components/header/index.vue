@@ -8,7 +8,7 @@
             <span>新房</span>
             <span>二手房</span>
             <span>租房</span>
-            <span class="iconfont icon-shouqianniuicon"></span>
+            <v-touch tag="span" @tap="handleClick()" class="iconfont icon-shouqianniuicon"></v-touch>
         </div>
 
   </div>
@@ -16,12 +16,17 @@
 
 <script>
 export default {
-  name: "Header",
+    name: "Header",
   data(){
       return{
           addr:"北京"
       }
-  }
+  },
+  methods: {
+      handleClick(){
+          this.$emit("handle","true")
+      }
+  },
 };
 </script>
 
