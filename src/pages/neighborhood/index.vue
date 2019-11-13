@@ -77,7 +77,9 @@ export default {
   },
   methods:{
   async  handleGetNewHouseList(city_id){
+      // 获取数据
             let data = await neighborhoodApi(city_id)
+        //页面渲染
             this.list=data.data
             console.log(data);
           //  this.newHouseList=data.result.rows;
