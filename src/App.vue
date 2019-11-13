@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    <Neighborhood/>
+ 
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Neighborhood from "./pages/neighborhood"
+
 export default {
   name:"App",
  components:{
-   Neighborhood
+
  },
   data(){
     return{
