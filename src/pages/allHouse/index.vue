@@ -1,6 +1,7 @@
 <template>
   <div class="All_header">
      <ChildHeader/>
+     <SelectBar/>
   </div>
 </template>
 
