@@ -32,9 +32,19 @@ const router = new VueRouter({
             }
         },
         {
-            path:"/detail",
+            path:"/detail/:id/:index/:loupan",
             name:"detail",
+            props:true,
             component:_=>import("@pages/detail"),
+            meta:{
+                flag:false
+            }
+        },
+        {
+            path:"/zx",
+            name:"zhuangxiu",
+            props:true,
+            component:_=>import("@pages/zhuangxiu"),
             meta:{
                 flag:false
             }
