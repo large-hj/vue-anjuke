@@ -1,10 +1,13 @@
 <template>
   <div id="app">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Neighborhood/>
 =======
  
 >>>>>>> guorong
+=======
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
     <router-view></router-view>
   </div>
 </template>
@@ -12,6 +15,7 @@
 
 export default {
   name:"App",
+<<<<<<< HEAD
  components:{
 
  },
@@ -24,11 +28,16 @@ export default {
 
 export default {
   name:"App",
+=======
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
   components:{
     
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
 </script>
 <style lang="scss">
 .page{

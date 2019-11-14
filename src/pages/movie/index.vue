@@ -2,21 +2,43 @@
   <div class="page">
     <Header />
     <div class="search-content">
+<<<<<<< HEAD
       <!-- <i class="icon icon-search"></i>
       <i class="search-line">|</i>-->
+=======
+
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
       <i class="search-text">挑好房，上安居客</i>
     </div>
 
     <div class="nav">
+<<<<<<< HEAD
       <div class="con" v-for="(item,index) in list" :key="index">
+=======
+      <router-link tag="div" class="con" v-for="(item,index) in list" :key="index"
+        :to="item.path"
+      >
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
         <div class="img">
           <img :src="item.img" alt />
         </div>
         <p>{{item.title}}</p>
+<<<<<<< HEAD
       </div>
     </div>
 
     <router-link tag="div" to="/detail" class="list"  v-for="(item,index) in indexList" :key="index">
+=======
+      </router-link>
+    </div>
+<!-- :to="'/detail/'+item.info.loupan_id+'/'+item.info.loupan_name" -->
+    <router-link tag="div" :to="'/detail/'+item.info.city_id+'/'+index+'/'+item.info.loupan_id"  class="list"  
+    v-for="(item,index) in indexList" :key="index"
+
+    v-show="index<5||10<index&&index<15"
+    
+    >
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
             <div class="img">
                 <img :src="item.info.default_image">
                
@@ -30,6 +52,10 @@
                 </div>
             </div>
       </router-link>
+<<<<<<< HEAD
+=======
+   
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
 
   </div>
 </template>
@@ -43,6 +69,7 @@ export default {
       list: [
         {
           title: "新房",
+<<<<<<< HEAD
           img: ""
         },
         {
@@ -52,10 +79,25 @@ export default {
         {
           title: "租房",
           img: ""
+=======
+          img: "http://img1.imgtn.bdimg.com/it/u=3130587500,21387431&fm=26&gp=0.jpg",
+          path:"/nf"
+        },
+        {
+          title: "二手房",
+          img: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3851715675,1701114100&fm=26&gp=0.jpg",
+          path:"/esf"
+        },
+        {
+          title: "租房",
+          img: "http://img1.imgtn.bdimg.com/it/u=3130587500,21387431&fm=26&gp=0.jpg",
+          path:"/zf"
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
         },
         {
           title: "商铺写字楼",
           img:
+<<<<<<< HEAD
             "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3851715675,1701114100&fm=26&gp=0.jpg"
         },
         {
@@ -69,21 +111,55 @@ export default {
         {
           title: "查房价",
           img: ""
+=======
+            "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3851715675,1701114100&fm=26&gp=0.jpg",
+            path:"/spxzl"
+        },
+        {
+          title: "海外地产",
+          img: "http://img1.imgtn.bdimg.com/it/u=3130587500,21387431&fm=26&gp=0.jpg",
+          path:"/hwdc"
+        },
+        {
+          title: "装修",
+          img: "http://img5.imgtn.bdimg.com/it/u=1903742239,1219093870&fm=26&gp=0.jpg",
+          path:"/zx"
+        },
+        {
+          title: "查房价",
+          img: "http://img3.imgtn.bdimg.com/it/u=3984885024,3746038777&fm=15&gp=0.jpg",
+          path:"/cfj"
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
         },
         {
           title: "找小区",
           img:
+<<<<<<< HEAD
             "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1815885912,3857949782&fm=26&gp=0.jpg"
+=======
+            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1815885912,3857949782&fm=26&gp=0.jpg",
+            path:"/zxq"
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
         },
         {
           title: "免费看房",
           img:
+<<<<<<< HEAD
             "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=106310800,866905876&fm=26&gp=0.jpg"
+=======
+            "http://img5.imgtn.bdimg.com/it/u=24888947,2469023424&fm=26&gp=0.jpg",
+            path:"/mfkf"
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
         },
         {
           title: "地图查房",
           img:
+<<<<<<< HEAD
             "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2490533578,3187105333&fm=26&gp=0.jpg"
+=======
+            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2490533578,3187105333&fm=26&gp=0.jpg",
+            path:"/dtcf"
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
         }
       ],
        indexList: [],
@@ -97,6 +173,7 @@ export default {
    created() {
     this.handleGetindexList(10);
   },
+<<<<<<< HEAD
    methods: {
     async handleGetindexList(cityId) {
       let data = await indexNowApi(cityId);
@@ -107,6 +184,16 @@ export default {
 
       
         
+=======
+  
+   methods:{
+    async handleGetindexList(cityId){
+      let data = await indexNowApi(cityId);
+
+       this.indexList = data.data;
+      
+
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
     }
   },
   
@@ -168,7 +255,10 @@ export default {
          .list{
         width: 100%;
         height: 1.13rem;
+<<<<<<< HEAD
         background: paleturquoise;
+=======
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
         padding:  0.15rem;
         display: flex;
         border-bottom:1px solid #ccc;
@@ -191,7 +281,11 @@ export default {
             flex-direction: column;
             width: 80%;
             height: 100%;
+<<<<<<< HEAD
             background: chartreuse;
+=======
+
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
             padding-left: 0.1rem;
         }
         .content .strong{

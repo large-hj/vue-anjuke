@@ -27,6 +27,16 @@
       "unicode_decimal": 58881
     },
     {
+<<<<<<< HEAD
+=======
+      "icon_id": "599957",
+      "name": "我的",
+      "font_class": "wode1",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
       "icon_id": "608351",
       "name": "箭头",
       "font_class": "jiantouarrow486",
@@ -41,6 +51,16 @@
       "unicode_decimal": 59030
     },
     {
+<<<<<<< HEAD
+=======
+      "icon_id": "658012",
+      "name": "飞机",
+      "font_class": "feiji",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
       "icon_id": "714438",
       "name": "搜索",
       "font_class": "sousuo1",
@@ -104,6 +124,16 @@
       "unicode_decimal": 58883
     },
     {
+<<<<<<< HEAD
+=======
+      "icon_id": "1450435",
+      "name": "查房价",
+      "font_class": "chafangjia",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
       "icon_id": "2740807",
       "name": "左箭头",
       "font_class": "mjiantou-copy",
@@ -123,6 +153,7 @@
       "font_class": "sousuo",
       "unicode": "e62e",
       "unicode_decimal": 58926
+<<<<<<< HEAD
     },
     {
       "icon_id": "6028798",
@@ -139,6 +170,31 @@
       "unicode_decimal": 58922
     },
     {
+=======
+    },
+    {
+      "icon_id": "5652733",
+      "name": "装修",
+      "font_class": "zhuangxiu",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "6028798",
+      "name": "钱",
+      "font_class": "qian",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "6485715",
+      "name": "全部",
+      "font_class": "all",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
       "icon_id": "6824588",
       "name": "其他",
       "font_class": "qita",
@@ -153,6 +209,23 @@
       "unicode_decimal": 59159
     },
     {
+<<<<<<< HEAD
+=======
+      "icon_id": "6970028",
+      "name": "问答",
+      "font_class": "wenda",
+      "unicode": "e703",
+      "unicode_decimal": 59139
+    },
+    {
+      "icon_id": "8089711",
+      "name": "商铺",
+      "font_class": "iconfront-",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+>>>>>>> d8f167bf1e6c6aa069b8cdfb62cac6bee951540b
       "icon_id": "8808231",
       "name": "握手",
       "font_class": "aboutuss_fuzhi",

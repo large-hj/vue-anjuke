@@ -1,15 +1,12 @@
 import axios from "axios";
 
-<<<<<<< HEAD
+
 const server = axios.create({
     timeout:5000,
     //baseUrl:"",
-=======
-const server =axios.create({
-    timeout:6000,
->>>>>>> guorong
-    withCredentials:true
 })
+
+
 
 //请求拦截器
 server.interceptors.request.use((config)=>{

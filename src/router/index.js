@@ -50,8 +50,6 @@ const router = new VueRouter({
     ]
 })
 
-
-<<<<<<< HEAD
 // export default router;
 import Vue from "vue";
 import VueRouter from "vue-router";
@@ -87,9 +85,20 @@ const router = new VueRouter({
             }
         },
         {
-            path:"/detail",
+    
+            path:"/detail/:id/:index/:loupan",
             name:"detail",
+            props:true,
             component:_=>import("@pages/detail"),
+            meta:{
+                flag:false
+            }
+        },
+        {
+            path:"/zx",
+            name:"zhuangxiu",
+            props:true,
+            component:_=>import("@pages/zhuangxiu"),
             meta:{
                 flag:false
             }
@@ -112,7 +121,6 @@ router.beforeEach((to,from,next)=>{
     }
 })
 
+
+
 export default router;
-=======
-export default router;
->>>>>>> guorong
