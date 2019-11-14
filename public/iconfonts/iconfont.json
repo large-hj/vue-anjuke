@@ -69,6 +69,13 @@
       "unicode_decimal": 58985
     },
     {
+      "icon_id": "894312",
+      "name": "五角星",
+      "font_class": "wujiaoxing",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
       "icon_id": "960491",
       "name": "租房",
       "font_class": "zufang",

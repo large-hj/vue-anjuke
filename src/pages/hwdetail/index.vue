@@ -1,9 +1,9 @@
 <template>
   <div class="box">
     <header>
-      <span>安居客</span>
+      <v-touch tag="span" @tap="handlebackAd()"><i class="iconfont">&#xe600;</i></v-touch>
       <span>楼盘详情</span>
-      <span>同区域楼盘</span>
+      <span></span>
     </header>
     <div class="img">
       <img
@@ -15,17 +15,18 @@
       <div>
         <p class="p1">{{detail.loupan_name}}</p>
         <p class="p">
-          <a>新房</a>
-          <a>别墅</a>
+          <a v-for="(child,index) in detail.label" :key="index">{{child}}</a>
+          <!-- <a>别墅</a>
           <a>投资回报率5%</a>
-          <a>年租金12万</a>
+          <a>年租金12万</a> -->
         </p>
       </div>
 
       <div class="info">
         <p>
           <span>总价</span>
-          <span>¥249万/套起</span>
+          <span>¥682万/套起</span>
+          <!-- <span>¥{{detail.price.price_min}}万/套起</span> -->
         </p>
         <p>
           <span>地址</span>
@@ -65,9 +66,12 @@
         <span>电话</span>
       </div>
     </div>
+    
   </div>
+  
 </template>
 <script>
+
 import { hwdetailApi } from "@api/neighborhood";
 export default {
   nane:"Hwdetail",
@@ -85,8 +89,10 @@ export default {
   methods: {
     async handlehwdetail(loupan_id) {
       let data = await hwdetailApi(loupan_id);
-      console.log(data);
       this.detail=data.data.base;
+    },
+    handlebackAd(){
+      this.$router.back();
     }
   }
 };
@@ -104,6 +110,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.13rem;
 }
 header span {
   font-size: 0.14rem;

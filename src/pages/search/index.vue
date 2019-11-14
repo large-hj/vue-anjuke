@@ -28,10 +28,12 @@
         </div>
       </div>
     </div>
+    
   </div>
 </template>
 <script>
 import {searchApi} from  "@api/neighborhood";
+
 export default {
   
   name:"Search",

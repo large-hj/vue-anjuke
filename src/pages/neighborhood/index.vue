@@ -9,17 +9,10 @@
             <i class="iconfont">&#xe6aa;</i>
           </div>
 
-
-          <router-link
-          tag="div"
-          to="/search"
-           class="search">
+          <router-link tag="div" to="/search" class="search">
             <i class="iconfont icon2">&#xe613;</i>
             <span>搜索小区</span>
           </router-link>
-
-
-
         </div>
         <div class="header-3">
           <i class="iconfont icon3">&#xe669;</i>
@@ -38,10 +31,7 @@
           <a>房价</a>
         </li>
         <li>
-          <router-link 
-            tag="a"
-            to="/broker"
-          >经济人</router-link>
+          <router-link tag="a" to="/broker">经济人</router-link>
         </li>
         <li>
           <a>估价</a>
@@ -51,11 +41,22 @@
         </li>
       </ul>
     </div>
+    <div>
+      <van-dropdown-menu>
+        <van-dropdown-item v-model="value1" :options="option1" />
+        <van-dropdown-item v-model="value2" :options="option2" />
+        <van-dropdown-item v-model="value3" :options="option3" />
+        <van-dropdown-item v-model="value4" :options="option4" />
+      </van-dropdown-menu>
+    </div>
     <!-- list页 -->
-    <router-link 
-    tag="div"
-    :to="'/hwdetail/'+item.loupan_id"
-    class="list" v-for="(item,index) in list " :key="index">
+    <router-link
+      tag="div"
+      :to="'/hwdetail/'+item.loupan_id"
+      class="list"
+      v-for="(item,index) in lists "
+      :key="index"
+    >
       <div class="img">
         <img :src="item.image" />
       </div>
@@ -79,15 +80,50 @@
         </div>
       </div>
     </router-link>
+  <Loading />
   </div>
 </template>
 <script>
+import Vue from 'vue';
+import { DropdownMenu, DropdownItem } from 'vant';
+Vue.use(DropdownMenu).use(DropdownItem);
 import { neighborhoodApi } from "@api/neighborhood";
+import Loading from "@lib/loading";
 export default {
   // name:"Neighborhood",
+  components:{
+    Loading
+  },
   data() {
     return {
-      list: []
+      lists: [],
+      value1: 0,
+      value2: "a",
+      value3: "a",
+      value4: "a",
+      option1: [
+        { text: "区域", value: 0 },
+        { text: "朝阳", value: 1 },
+        { text: "海淀", value: 2 },
+        { text: "海淀", value: 3 },
+      ],
+      option2: [
+        { text: "价格", value: "a" },
+        { text: "8000元以下", value: "b" },
+        { text: "8000-1万", value: "c" },
+        { text: "1-1.5万", value: "d" },
+      ],
+      option3: [
+        { text: "特色", value: "a" },
+        { text: "绿化优美", value: "b" },
+        { text: "别墅", value: "c" },
+        { text: "次新房", value: "d" },
+      ],
+      option4: [
+        { text: "排序", value: "a" },
+        { text: "均价从低到高排序", value: "b" },
+        { text: "均价从到到底", value: "c" }
+      ]
     };
   },
 
@@ -99,7 +135,7 @@ export default {
       // 获取数据
       let data = await neighborhoodApi(page);
       //页面渲染
-      this.list = data.data.rows;
+      this.lists = data.data.rows;
       console.log(data.data.rows);
     }
   }
@@ -196,6 +232,8 @@ html {
   font-size: 0.15rem;
   color: #e6e6e6;
 }
+/**********************ui********************/
+
 /* list */
 .list {
   width: 100%;
@@ -237,13 +275,14 @@ html {
 .content .last {
   display: flex;
   flex-direction: column;
+  margin-top: 0.03rem;
 }
 .content .last span {
   padding-right: 0.05rem;
   color: cyan;
 }
-.content .last span i{
-   color: black;
+.content .last span i {
+  color: black;
   font-size: 0.12rem;
 }
 .content .last a {
@@ -276,5 +315,6 @@ html {
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 0.1rem;
+  margin-top: 0.04rem;
 }
 </style>>

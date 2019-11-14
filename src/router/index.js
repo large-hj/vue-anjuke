@@ -24,7 +24,7 @@ const router = new VueRouter({
             path:"/hwdetail/:id",
             component:_=>import("@pages/hwdetail"),
             name:"hwdetail",
-            props:true
+            props:true,
         },
         /************通过路由走search页面***************** * */
         {
