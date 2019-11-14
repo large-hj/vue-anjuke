@@ -1,29 +1,32 @@
 <template>
-     <div class="main_box">
-        <ul>
-            <router-link tag="li" :to="'/houseDetail'+item.id" v-for="(item,index) in newHouseList" :key="index">
-                <div class="main_img">
-                    <img :src="item.default_image" alt="">
-                </div>
-                <div class="main_txt">
-                    <h4>{{item.loupan_name}}</h4>
-                    <span>{{item.region_title}} {{item.subregion_title}} | 建面 {{item.jianzhu_area}}</span>
-                    <p>{{item.new_price.show_price}}{{item.new_price.unit}}</p>
-                    <div class="label_tip">
-                        <em class="saleHouseTag on-sale">{{item.new_status_sale}}</em>
-                        <em class="defaultTag ui-tag_grey">{{item.display_price_type_str}}</em>
-                        <em class="defaultTag ui-tag_grey">{{item.loupan_tags[1]}}</em>
-                        <em class="defaultTag ui-tag_grey">{{item.loupan_tags[2]}}</em>
+<List-scroll>
+        <div class="main_box" >
+            
+            <ul class="scroll_body">
+                <router-link tag="li" :to="'/houseDetail/'+index+'/'+item.loupan_id" v-for="(item,index) in newHouseList" :key="index">
+                    <div class="main_img">
+                        <img :src="item.default_image" alt="">
                     </div>
-                    <div class="g-overflow">
-                        <i>热</i>
-                        <span class="adv-ctx" >{{item.rank_desc}}</span>
+                    <div class="main_txt">
+                        <h4>{{item.loupan_name}}</h4>
+                        <span>{{item.region_title}} {{item.subregion_title}} | 建面 {{item.jianzhu_area}}</span>
+                        <p>{{item.new_price.show_price}}{{item.new_price.unit}}</p>
+                        <div class="label_tip">
+                            <em class="saleHouseTag on-sale">{{item.new_status_sale}}</em>
+                            <em class="defaultTag ui-tag_grey">{{item.display_price_type_str}}</em>
+                            <em class="defaultTag ui-tag_grey">{{item.loupan_tags[1]}}</em>
+                            <em class="defaultTag ui-tag_grey">{{item.loupan_tags[2]}}</em>
+                        </div>
+                        <div class="g-overflow">
+                            <i>热</i>
+                            <span class="adv-ctx" >{{item.rank_desc}}</span>
+                        </div>
                     </div>
-                </div>
-            </router-link>
-            <router-view></router-view>
-        </ul>
-    </div>
+                </router-link>        
+                    <router-view></router-view>
+            </ul>
+        </div>
+    </List-scroll>
 </template>
 
 <script>
@@ -41,21 +44,21 @@ export default {
    methods:{
       async  handleGetNewHouseList(cid){
             let data = await newHouseApi(cid)
-           this.newHouseList=data.result.rows;
+            this.newHouseList=data.result.rows;
        }
-   }
-   
+   },  
 }
 </script>
 
 <style lang="scss">
-    .main_box,ul{
+    .main_box{
     width:100%;
-    height:100%;
     background: #fff;
     display: flex;
     flex-direction: column;
+    z-index:2;
 }
+
 .main_box li{
    width:100%;
    height:1.46rem;

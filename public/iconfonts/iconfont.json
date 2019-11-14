@@ -76,11 +76,32 @@
       "unicode_decimal": 59539
     },
     {
+      "icon_id": "2182024",
+      "name": "地址",
+      "font_class": "location",
+      "unicode": "e6c2",
+      "unicode_decimal": 59074
+    },
+    {
+      "icon_id": "3092295",
+      "name": "资料对比",
+      "font_class": "ziliaoduibi",
+      "unicode": "e787",
+      "unicode_decimal": 59271
+    },
+    {
       "icon_id": "3550768",
       "name": "左箭头",
       "font_class": "ico_leftarrow",
       "unicode": "e670",
       "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "6176571",
+      "name": "取消",
+      "font_class": "quxiao",
+      "unicode": "e627",
+      "unicode_decimal": 58919
     },
     {
       "icon_id": "6460230",
@@ -97,6 +118,13 @@
       "unicode_decimal": 59146
     },
     {
+      "icon_id": "7820936",
+      "name": "变更",
+      "font_class": "biangeng-copy",
+      "unicode": "e9f0",
+      "unicode_decimal": 59888
+    },
+    {
       "icon_id": "7872839",
       "name": "下拉箭头",
       "font_class": "xialajiantou1",
@@ -104,11 +132,25 @@
       "unicode_decimal": 58946
     },
     {
+      "icon_id": "8863310",
+      "name": "通知",
+      "font_class": "tongzhi",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
       "icon_id": "9100583",
       "name": "排序",
       "font_class": "paixu",
       "unicode": "e64e",
       "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "9231559",
+      "name": "问题",
+      "font_class": "wenti",
+      "unicode": "e699",
+      "unicode_decimal": 59033
     }
   ]
 }

@@ -23,7 +23,7 @@ const router = new VueRouter({
             component:_=>import("@pages/nowSale")       
         },
         {
-            path:"/houseDetail/:id",
+            path:"/houseDetail/:index/:loupan_id",
             component:_=>import("@pages/houseDetail"),
             name:"houseDetail",
             props:true

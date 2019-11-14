@@ -1,12 +1,14 @@
 <template>
-  <div class="filter-bar">
-    <div class="select" v-for="(item,index) in list" :key="index">
-      <div class="title">
-        <span>{{item.title}}</span>
-        <i :class="item.icon"></i>
+<van-sticky>
+    <div class="filter-bar">
+      <div class="select" v-for="(item,index) in list" :key="index">
+        <div class="title">
+          <span>{{item.title}}</span>
+          <i :class="item.icon"></i>
+        </div>
       </div>
     </div>
-  </div>
+  </van-sticky>
 </template>
 
 <script>
@@ -47,8 +49,6 @@ export default {
     height: 0.44rem;
     display: flex;
     justify-content: space-between;
-    position: sticky;
-    top:0;
     background: #fff;
     .select {
         height: 0.44rem;

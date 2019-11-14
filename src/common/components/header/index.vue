@@ -39,6 +39,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index:10;
 }
 .header .BizHeader_logo {
     width:1.44rem;

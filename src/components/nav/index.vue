@@ -1,11 +1,13 @@
 <template>
+  
     <div class="new_nav">
-        <div class="search_box">
-        <i class="iconfont icon-sousuo"></i>
-        <router-link tag="input" to="/search" type="search" class="search" placeholder="请输入楼盘名称或地址" />
-        </div>
-        <div class="iconfont icon-ditu map"></div>
-    </div>
+          <div class="search_box">
+          <i class="iconfont icon-sousuo"></i>
+          <router-link tag="input" to="/search" type="search" class="search" placeholder="请输入楼盘名称或地址" />
+          </div>
+          <div class="iconfont icon-ditu map"></div>
+      </div>
+   
 </template>
 
 <script>
@@ -23,6 +25,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index:20;
 }
 .new_nav .search_box {
   width: 90%;

@@ -1,8 +1,8 @@
 <template>
   <div class="All_header">
-    <a href>
+    <v-touch tag="div" @tap="handleBack()" class="back">
       <i class="iconfont icon-ico_leftarrow"></i>
-    </a>
+    </v-touch>
     <div class="h-search" id="hSearch">
       <i class="iconfont icon-sousuo"></i>
       <router-link tag="input" to="/search" type="search" placeholder="搜索新房楼盘或地址"/>
@@ -16,6 +16,11 @@
 <script>
 export default {
   name: "ChildHeader",
+  methods:{
+    handleBack(){
+      this.$router.back();
+    }
+  }
 };
 </script>
 
@@ -31,7 +36,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 0 0.1rem;
-   a {
+   .back{
     height: 0.3rem;
     width: 0.2rem;
     font-size: 0.18rem;
