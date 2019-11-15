@@ -2,7 +2,10 @@
   <div class="bigbox">
     <!-- 头部 -->
     <div class="head">
-      <i class="iconfont icon1">&#xe600;</i>
+     <v-touch 
+     tag="div"
+     @tap="backtohome()"
+     class="icon1"> <i class="iconfont icon1">&#xe600;</i></v-touch>
       <span class="free">免费看房</span>
       <i class="iconfont">&#xe6d5;</i>
     </div>
@@ -56,11 +59,18 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+    methods:{
+        backtohome(){
+            this.$router.back();
+        }
+    }
+};
 </script>
 <style scoped>
 body,
 html {
+    width: 100%;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -179,7 +189,7 @@ html {
 }
 .detail {
   width: 100%;
-  height: 0.92rem;
+  height: 0.88rem;
   border-bottom: 1px solid #ccc;
   flex-direction: column;
   display: flex;
@@ -231,6 +241,10 @@ em:nth-of-type(5) {
   font-size: 0.12rem;
   background: #f9f9f9;
   color: #a3a8ad;
+}
+.group-last{
+    height: 0.14rem;
+    display: flex;
 }
 .group-last span {
   font-size: 0.12rem;

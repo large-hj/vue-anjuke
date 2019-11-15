@@ -2,7 +2,10 @@
   <div class="free_look_house">
     <div class="top">
       <div class="header">
-        <div class="header-1">安居客</div>
+        <v-touch 
+        tag="div"
+        @tap="backfindneighborhood()"
+        class="header-1">安居客</v-touch>
         <div class="header-2">
           <div class="address">
             <span class="site">无锡</span>
@@ -20,7 +23,7 @@
         </div>
       </div>
       <!-- 导航 -->
-      <ul class="nav">
+      <ul class="nav1">
         <li>
           <a href>二手房</a>
         </li>
@@ -80,7 +83,7 @@
         </div>
       </div>
     </router-link>
-  <!-- <Loading /> -->
+  <Loading />
   </div>
 </template>
 <script>
@@ -88,11 +91,11 @@ import Vue from 'vue';
 import { DropdownMenu, DropdownItem } from 'vant';
 Vue.use(DropdownMenu).use(DropdownItem);
 import { neighborhoodApi } from "@api/neighborhood";
-// import Loading from "@lib/loading";
+import Loading from "@lib/loading";
 export default {
   // name:"Neighborhood",
   components:{
-    // Loading
+    Loading
   },
   data() {
     return {
@@ -137,6 +140,9 @@ export default {
       //页面渲染
       this.lists = data.data.rows;
       console.log(data.data.rows);
+    },
+    backfindneighborhood(){
+      this.$router.back();
     }
   }
 };
@@ -216,7 +222,7 @@ html {
 .direct {
   font-size: 0.1rem;
 }
-.nav {
+.nav1 {
   background: #62ab00;
   height: 0.36rem;
   width: 100%;
@@ -224,11 +230,11 @@ html {
   justify-content: center;
   align-items: center;
 }
-.nav li {
+.nav1 li {
   padding: 0 0.06rem;
   display: flex;
 }
-.nav li a {
+.nav1 li a {
   font-size: 0.15rem;
   color: #e6e6e6;
 }
