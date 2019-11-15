@@ -8,7 +8,7 @@
         <input type="password" placeholder="请输入您的密码" />
       </div>
       <div class="login_btn">
-        <input type="submit" value="注册" />
+        <input type="submit" value="登录" />
       </div>
     </div> 
   </div>
@@ -16,14 +16,15 @@
 
 
 <script>
-export default {
- 
-};
+  name:"register"
+
+export default {};
 </script>
 
 
 
 <style scoped>
+
 #login_content .login_username {
     width: 100%;
     height: .5rem;

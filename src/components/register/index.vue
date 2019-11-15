@@ -2,13 +2,13 @@
   <div class="box">
     <div id="login_content">
       <div class="login_username">
-        <input type="text" placeholder="账户名/手机号/Email" />
+        <input type="text" placeholder="账户名/手机号/Email"  v-model="val1" />
       </div>
       <div class="login_password">
-        <input type="password" placeholder="请输入您的密码" />
+        <input type="password" placeholder="请输入您的密码" v-model="val2" />
       </div>
       <div class="login_btn">
-        <input type="submit" value="登录" />
+        <input type="submit" value="注册" @click="submitRegister()" />
       </div>
     </div> 
   </div>
@@ -16,7 +16,34 @@
 
 
 <script>
-export default {};
+  name:"register"
+export default {
+  data(){
+    return{
+      val1:'',
+      val2:'',
+
+    }
+  },
+  methods:{
+    submitRegister(){
+        let username=this.val1;
+        let password=this.val2;
+        console.log(username)
+        $.ajax({
+            type:"post",
+            url:"users.js/register",
+            data:{
+                username,
+                password
+            },
+          success:(data)=>{
+              console.log(data)
+          }
+        })
+    }
+  }
+};
 </script>
 
 

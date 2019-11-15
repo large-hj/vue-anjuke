@@ -12,9 +12,10 @@
       <keep-alive>
         <router-view></router-view>
       </keep-alive>
+      
       <div class="login_link">
-        <router-link tag="p" to="/login/login">立即登陆</router-link>
-        <router-link tag="p" to="/login/register">立即注册</router-link>
+        <router-link tag="p" to="/lore/login">立即登陆</router-link>
+        <router-link tag="p" to="/lore/register">立即注册</router-link>
       </div>
       
        
@@ -23,7 +24,9 @@
 
 
 <script>
-export default {};
+export default {
+  
+};
 </script>
 
 
