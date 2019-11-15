@@ -2,7 +2,7 @@
   <div>
     <div class="header">
       <div class="BizHeader_logo">
-        <a href="https://m.anjuke.com/bj/" class="title">安居客</a>
+        <a  class="title">安居客</a>
         <router-link
           tag="a"
           :to="{name:'city',params:{path:$route.path}}"

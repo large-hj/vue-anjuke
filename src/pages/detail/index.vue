@@ -100,6 +100,7 @@ export default {
     .box{
         width: 100%;
         height: 20rem;
+        background: #f2fcf3;
     }
      header{
             width: 100%;
@@ -124,7 +125,7 @@ export default {
         .detial{
             width: 90%;
             height: 3.0rem;
-            background: #ccc;
+            background: #fff;
             margin: 0 auto;
             position: relative;
             display: flex;
@@ -153,7 +154,7 @@ export default {
             }
             .detial>div .p a{
                 display: inline-block;
-                background: red;
+                background: #ccc;
                 margin: 0.02rem;
             }
             .info {
