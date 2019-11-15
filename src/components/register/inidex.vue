@@ -16,7 +16,9 @@
 
 
 <script>
-export default {};
+export default {
+ 
+};
 </script>
 
 
@@ -73,5 +75,5 @@ export default {};
     padding: .1rem .2rem;
     font-size: .16rem;
 }
-</style>>
+</style>
 

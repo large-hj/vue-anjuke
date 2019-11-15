@@ -22,6 +22,7 @@ export default {};
 
 
 <style scoped>
+
 #login_content .login_username {
     width: 100%;
     height: .5rem;
@@ -73,5 +74,5 @@ export default {};
     padding: .1rem .2rem;
     font-size: .16rem;
 }
-</style>>
+</style>
 
