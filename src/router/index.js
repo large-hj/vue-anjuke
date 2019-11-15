@@ -49,6 +49,52 @@ const router = new VueRouter({
                 flag:false
             }
         },
+        {
+            path:"/zxq",
+            component:_=>import("@pages/neighborhood"),
+            name:"neighborhood",
+            meta:{
+                flag:true,
+                requiredAuth:false
+            },
+        },
+          /************通过路由走经纪人页面***************** * */
+        {
+            path:"/broker",
+            component:_=>import("@pages/broker"),
+            name:"broker",
+            meta:{
+                flag:true,
+                requiredAuth:false
+            },
+        },
+          /************通过路由走海外详情页面***************** * */
+        {
+            path:"/hwdetail/:id",
+            component:_=>import("@pages/hwdetail"),
+            name:"hwdetail",
+            props:true,
+        },
+         /************通过路由走search页面***************** * */
+         {
+            path:"/search",
+            component:_=>import("@pages/search"),
+            name:"search",
+            meta:{
+                flag:true,
+                requiredAuth:false
+            },
+        },
+         /************通过路由走免费看房页面***************** * */
+         {
+            path:"/mfkf",
+            component:_=>import("@pages/freelookhouse"),
+            name:"freelookhouse",
+            meta:{
+                flag:true,
+                requiredAuth:false
+            },
+        },
     ]
 })
 
