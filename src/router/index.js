@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import city from "./city"
+import login from "./login"
 Vue.use(VueRouter);
 
 
@@ -22,15 +23,8 @@ const router = new VueRouter({
             },
         },
         city,
-       
-        {
-            path:"/login",
-            name:"login",
-            component:_=>import("@pages/login"),
-            meta:{
-                flag:false
-            }
-        },
+        login,
+
         {
             path:"/detail/:id/:index/:loupan",
             name:"detail",
