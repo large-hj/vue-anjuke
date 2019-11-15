@@ -2,10 +2,7 @@
   <div class="free_look_house">
     <div class="top">
       <div class="header">
-        <v-touch 
-        tag="div"
-        @tap="backfindneighborhood()"
-        class="header-1">安居客</v-touch>
+        <v-touch tag="div" @tap="backfindneighborhood()" class="header-1">安居客</v-touch>
         <div class="header-2">
           <div class="address">
             <span class="site">无锡</span>
@@ -44,59 +41,64 @@
         </li>
       </ul>
     </div>
-    
-      <van-dropdown-menu class="ui1" >
-        <van-dropdown-item   class="ui" v-model="value1" :options="option1" />
-        <van-dropdown-item v-model="value2" :options="option2" />
-        <van-dropdown-item v-model="value3" :options="option3" />
-        <van-dropdown-item v-model="value4" :options="option4" />
-      </van-dropdown-menu>
-    
+
+    <van-dropdown-menu class="ui1">
+      <van-dropdown-item class="ui" v-model="value1" :options="option1" />
+      <van-dropdown-item v-model="value2" :options="option2" />
+      <van-dropdown-item v-model="value3" :options="option3" />
+      <van-dropdown-item v-model="value4" :options="option4" />
+    </van-dropdown-menu>
+
     <!-- list页 -->
-    <router-link
-      tag="div"
-      :to="'/hwdetail/'+item.loupan_id"
-      class="list"
-      v-for="(item,index) in lists "
-      :key="index"
-    >
-      <div class="img">
-        <img :src="item.image" />
+    <!-- <Alley-scroll> -->
+    <div class="house_body">
+      <div class="house_content">
+        <router-link
+          tag="div"
+          :to="'/hwdetail/'+item.loupan_id"
+          class="list"
+          v-for="(item,index) in lists "
+          :key="index"
+        >
+          <div class="img">
+            <img :src="item.image" />
+          </div>
+          <div class="content">
+            <span class="strong">{{item.loupan_name_cn}}</span>
+            <span>
+              {{item.country_name}}
+              <i>| {{item.city_name}}</i>
+            </span>
+            <span class="ys">
+              <i v-for="(child,index) in item.property" :key="index">{{child}}</i>
+            </span>
+            <div class="last">
+              <span class="yue">
+                约￥
+                <i class="money">{{item.loupan_price}}</i>万元
+                <i></i> |
+                <i>{{item.fangyuan_area}}m</i>
+              </span>
+              <a class="adv">{{item.rec_reason}}</a>
+            </div>
+          </div>
+        </router-link>
       </div>
-      <div class="content">
-        <span class="strong">{{item.loupan_name_cn}}</span>
-        <span>
-          {{item.country_name}}
-          <i>| {{item.city_name}}</i>
-        </span>
-        <span class="ys">
-          <i v-for="(child,index) in item.property" :key="index">{{child}}</i>
-        </span>
-        <div class="last">
-          <span class="yue">
-            约￥
-            <i class="money">{{item.loupan_price}}</i>万元
-            <i></i> |
-            <i>{{item.fangyuan_area}}m</i>
-          </span>
-          <a class="adv">{{item.rec_reason}}</a>
-        </div>
-      </div>
-    </router-link>
-  <Loading />
+    </div>
+    <!-- </Alley-scroll> -->
   </div>
 </template>
 <script>
-import Vue from 'vue';
-import { DropdownMenu, DropdownItem } from 'vant';
+import Vue from "vue";
+import { DropdownMenu, DropdownItem } from "vant";
 Vue.use(DropdownMenu).use(DropdownItem);
 import { neighborhoodApi } from "@api/neighborhood";
-import Loading from "@lib/loading";
+/************引入better-scrill,此过程用分装实现*********************/
+// import BScorll from "better-scroll";
 export default {
   // name:"Neighborhood",
-  components:{
-    Loading
-  },
+  name: "Alley-scroll",
+
   data() {
     return {
       lists: [],
@@ -108,19 +110,19 @@ export default {
         { text: "区域", value: 0 },
         { text: "朝阳", value: 1 },
         { text: "海淀", value: 2 },
-        { text: "海淀", value: 3 },
+        { text: "海淀", value: 3 }
       ],
       option2: [
         { text: "价格", value: "a" },
         { text: "8000元以下", value: "b" },
         { text: "8000-1万", value: "c" },
-        { text: "1-1.5万", value: "d" },
+        { text: "1-1.5万", value: "d" }
       ],
       option3: [
         { text: "特色", value: "a" },
         { text: "绿化优美", value: "b" },
         { text: "别墅", value: "c" },
-        { text: "次新房", value: "d" },
+        { text: "次新房", value: "d" }
       ],
       option4: [
         { text: "排序", value: "a" },
@@ -141,7 +143,7 @@ export default {
       this.lists = data.data.rows;
       console.log(data.data.rows);
     },
-    backfindneighborhood(){
+    backfindneighborhood() {
       this.$router.back();
     }
   }
@@ -216,7 +218,9 @@ html {
   justify-content: center;
   align-items: center;
 }
-.icon1,.icon2,.icon3{
+.icon1,
+.icon2,
+.icon3 {
   font-size: 0.14rem;
 }
 .direct {
@@ -239,13 +243,18 @@ html {
   color: #e6e6e6;
 }
 /**********************ui********************/
-.ui1{
+.ui1 {
   height: 0.5rem;
   font-size: 0.2rem;
-
 }
 
 /* list */
+.house_body{
+  width: 100%;
+}
+.house_content{
+  width: 100%;
+}
 .list {
   width: 100%;
   height: 1.33rem;

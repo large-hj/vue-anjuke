@@ -92,6 +92,7 @@ const router = new VueRouter({
             name:"freelookhouse",
             meta:{
                 flag:true,
+                requiredAuth:false,
                 requiredAuth:false
             },
         },

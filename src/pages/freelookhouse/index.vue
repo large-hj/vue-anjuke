@@ -73,17 +73,22 @@ html {
     width: 100%;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  position: relative;
+  overflow-y: hidden;
+  position: absolute;
+}
+.bigbox{
+  width: 100%;
 }
 /* 头部 */
 .head {
+  width: 100%;
   height: 0.45rem;
   background: #62ab00;
   color: #fff;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 0.12rem;
 }
 .free {
   width: 2.8rem;
@@ -140,7 +145,6 @@ html {
 .fixed {
   width: 100%;
   position: absolute;
-  margin: 0 0.1rem;
   background: #fff;
   height: 0.44rem;
   border-bottom: solid 0.1rem #f5f5f5;
@@ -158,7 +162,7 @@ html {
   align-items: center;
 }
 .ul-house .li1,.li2 {
-  width: 50%;
+  width: 100%;
   text-align: center;
   height: 0.44rem;
     font-size: 0.16rem;
@@ -177,7 +181,7 @@ html {
 .box {
   height: 3.3rem;
   display: block;
-  padding: 15px 15px 0;
+  padding: 0.15rem 0.1rem 0;
 }
 .photo {
   width: 100%;
@@ -249,6 +253,7 @@ em:nth-of-type(5) {
 .group-last span {
   font-size: 0.12rem;
   color: #9aa0a6;
+ 
 }
 .group-last em {
   margin-left: 0.2rem;
@@ -270,7 +275,6 @@ em:nth-of-type(5) {
   color: #9aa0a6;
   text-align: center;
   line-height: 0.3rem;
-  display: flex;
 }
 .look-detail span:nth-of-type(1) {
   border: 1px solid #9aa0a6;
