@@ -51,7 +51,7 @@ export default {
         {
           title: "新房",
           img: "http://img1.imgtn.bdimg.com/it/u=3130587500,21387431&fm=26&gp=0.jpg",
-          path:"/nf"
+          path:"/newHouse"
         },
         {
           title: "二手房",
