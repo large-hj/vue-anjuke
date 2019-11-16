@@ -2,11 +2,11 @@
   <div class="free_look_house">
     <div class="top">
       <div class="header">
-        <v-touch tag="div" @tap="backfindneighborhood()" class="header-1">安居客</v-touch>
+        <div class="header-1">安居客</div>
         <div class="header-2">
           <div class="address">
             <span class="site">无锡</span>
-            <i class="iconfont icon1">&#xe6aa;</i>
+            <i class="iconfont">&#xe6aa;</i>
           </div>
 
           <router-link tag="div" to="/search" class="search">
@@ -20,7 +20,7 @@
         </div>
       </div>
       <!-- 导航 -->
-      <ul class="nav1">
+      <ul class="nav">
         <li>
           <a href>二手房</a>
         </li>
@@ -137,9 +137,6 @@ export default {
       //页面渲染
       this.lists = data.data.rows;
       console.log(data.data.rows);
-    },
-    backfindneighborhood() {
-      this.$router.back();
     }
   }
 };
@@ -162,7 +159,7 @@ html {
   width: 100%;
   height: 0.46rem;
   background: #62ab00;
-  padding: 0 0.08rem;
+  padding: 0 0.1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -214,15 +211,13 @@ html {
   justify-content: center;
   align-items: center;
 }
-.icon1,
-.icon2,
 .icon3 {
   font-size: 0.14rem;
 }
 .direct {
   font-size: 0.1rem;
 }
-.nav1 {
+.nav {
   background: #62ab00;
   height: 0.36rem;
   width: 100%;
@@ -230,31 +225,21 @@ html {
   justify-content: center;
   align-items: center;
 }
-.nav1 li {
+.nav li {
   padding: 0 0.06rem;
   display: flex;
 }
-.nav1 li a {
+.nav li a {
   font-size: 0.15rem;
   color: #e6e6e6;
 }
 /**********************ui********************/
-.ui1 {
-  height: 0.5rem;
-  font-size: 0.2rem;
-}
 
 /* list */
-.house_body{
-  width: 100%;
-}
-.house_content{
-  width: 100%;
-}
 .list {
   width: 100%;
   height: 1.33rem;
-  padding: 0.1rem;
+  padding: 0.15rem;
   display: flex;
   border-bottom: 1px solid #ccc;
   justify-content: flex-start;
@@ -263,7 +248,7 @@ html {
 .list .img {
   display: inline-block;
   width: 40%;
-  height: 1rem;
+  height: 0.81rem;
 }
 .list .img img {
   width: 100%;
@@ -294,12 +279,12 @@ html {
   margin-top: 0.03rem;
 }
 .content .last span {
-  padding-right: 0.06rem;
+  padding-right: 0.05rem;
   color: cyan;
 }
 .content .last span i {
   color: black;
-  font-size: 0.13rem;
+  font-size: 0.12rem;
 }
 .content .last a {
   color: black;
@@ -308,7 +293,7 @@ html {
 }
 .content .ys {
   display: inline-block;
-  height: 0.19rem;
+  height: 0.17rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -319,7 +304,6 @@ html {
   background: #f3f8fa;
   color: #7dafe8;
   margin-left: 0.02rem;
-  font-size: 0.11rem;
 }
 .content .last .yue {
   color: #e54b00;
@@ -331,7 +315,7 @@ html {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 0.12rem;
+  font-size: 0.1rem;
   margin-top: 0.04rem;
 }
 </style>>

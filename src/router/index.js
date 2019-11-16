@@ -58,7 +58,6 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
-
         {
             path:"/lore",
             component:_=>import("@pages/lore"),

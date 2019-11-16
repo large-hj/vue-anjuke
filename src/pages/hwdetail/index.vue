@@ -1,8 +1,11 @@
 <template>
   <div class="box">
     <header>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 89f2ff576c0eb186665425d4e6b6924326a76f50
       <v-touch tag="span" @tap="handlebackAd()"><i class="iconfont">&#xe600;</i></v-touch>
       <span>楼盘详情</span>
       <span></span>
