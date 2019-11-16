@@ -50,7 +50,7 @@
     </van-dropdown-menu>
 
     <!-- list页 -->
-    <!-- <Alley-scroll> -->
+    <Alley-scroll>
     <div class="house_body">
       <div class="house_content">
         <router-link
@@ -85,7 +85,7 @@
         </router-link>
       </div>
     </div>
-    <!-- </Alley-scroll> -->
+    </Alley-scroll>
   </div>
 </template>
 <script>
@@ -97,7 +97,7 @@ import { neighborhoodApi } from "@api/neighborhood";
 // import BScorll from "better-scroll";
 export default {
   // name:"Neighborhood",
-  name: "Alley-scroll",
+  // name: "Alley-scroll",
 
   data() {
     return {
@@ -250,11 +250,11 @@ html {
 
 /* list */
 .house_body{
-  width: 100%;
+overflow-x: hidden;
 }
-.house_content{
+/* .house_content{
   width: 100%;
-}
+} */
 .list {
   width: 100%;
   height: 1.33rem;
