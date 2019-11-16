@@ -58,11 +58,7 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
+
         {
             path:"/lore",
             component:_=>import("@pages/lore"),
@@ -99,10 +95,8 @@ const router = new VueRouter({
                 
             ]
         },
-<<<<<<< HEAD
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
-=======
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
+
+
           /************通过路由走经纪人页面***************** * */
         {
             path:"/broker",
@@ -130,8 +124,7 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
+
          /************通过路由走免费看房页面***************** * */
          {
             path:"/mfkf",
@@ -143,10 +136,7 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
-=======
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
-=======
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
+
     ]
 })
 

@@ -1,10 +1,8 @@
 <template>
   <div class="box">
     <header>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <v-touch tag="span" @tap="handlebackAd()"><i class="iconfont icon1">&#xe600;</i></v-touch>
-=======
+
+
       <v-touch tag="span" @tap="handlebackAd()"><i class="iconfont">&#xe600;</i></v-touch>
 >>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
 =======
