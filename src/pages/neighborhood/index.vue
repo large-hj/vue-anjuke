@@ -2,7 +2,7 @@
   <div class="free_look_house">
     <div class="top">
       <div class="header">
-        <div class="header-1">安居客</div>
+        <v-touch class="header-1" tag="div" @tap="handlebacksy()">安居客</v-touch>
         <div class="header-2">
           <div class="address">
             <span class="site">无锡</span>
@@ -20,7 +20,7 @@
         </div>
       </div>
       <!-- 导航 -->
-      <ul class="nav">
+      <ul class="nav1">
         <li>
           <a href>二手房</a>
         </li>
@@ -42,7 +42,7 @@
       </ul>
     </div>
     <div>
-      <van-dropdown-menu >
+      <van-dropdown-menu class="ui">
         <van-dropdown-item v-model="value1" :options="option1"></van-dropdown-item>
         <van-dropdown-item v-model="value2" :options="option2"></van-dropdown-item>
         <van-dropdown-item v-model="value3" :options="option3"></van-dropdown-item>
@@ -50,15 +50,15 @@
       </van-dropdown-menu>
     </div>
     <!-- list页 -->
-    <Alley-scroll>
+    <Alley-scroll ref="scroll">
     <div class="house_body">
       <div class="house_content">
         <router-link
-          tag="div"
-          :to="'/hwdetail/'+item.loupan_id"
           class="list"
           v-for="(item,index) in lists "
           :key="index"
+           tag="div"
+          :to="'/hwdetail/'+item.loupan_id"
         >
           <div class="img">
             <img :src="item.image" />
@@ -79,7 +79,7 @@
                 <i></i> |
                 <i>{{item.fangyuan_area}}m</i>
               </span>
-              <a class="adv">{{item.rec_reason}}</a>
+              <i class="adv">{{item.rec_reason}}</i>
             </div>
           </div>
         </router-link>
@@ -93,10 +93,8 @@ import Vue from 'vue';
 import { DropdownMenu, DropdownItem } from 'vant';
 Vue.use(DropdownMenu).use(DropdownItem);
 import { neighborhoodApi } from "@api/neighborhood";
-// import Loading from "@lib/loading";
 export default {
   // name:"Neighborhood",
-  // name: "Alley-scroll",
 
   data() {
     return {
@@ -125,14 +123,21 @@ export default {
       ],
       option4: [
         { text: "排序", value: "a" },
-        { text: "均价从低到高排序", value: "b" },
-        { text: "均价从到到底", value: "c" }
+        { text: "价格升序", value: "b" },
+        { text: "价格降序", value: "c" }
       ]
     };
   },
-
+  /********************************下拉刷新 */
+  watch:{
+    lists(){
+      // console.log("更新了");
+      this.$refs.scroll.handlefinishPullDown();
+    }
+  },
+  /*******************/
   created() {
-    this.handleGetNewHouseList(2);
+    this.handleGetNewHouseList(8);
   },
   methods: {
     async handleGetNewHouseList(page) {
@@ -140,9 +145,24 @@ export default {
       let data = await neighborhoodApi(page);
       //页面渲染
       this.lists = data.data.rows;
-      console.log(data.data.rows);
+      // console.log(data.data.rows);
+      
+    },
+    handlebacksy(){
+      this.$router.back();
     }
+  },
+/**********下拉刷新***************/
+    mounted(){
+      this.$refs.scroll.handlepullingDown(()=>{
+        var arr = [2,3,4,5,6,8];
+        var index =parseInt(0+Math.random()*6);
+        this.handleGetNewHouseList(arr[index]);
+      });
+
+      this.$refs.scroll.handleScroll();
   }
+  /******************************/
 };
 </script>
 <style scoped>
@@ -153,7 +173,12 @@ html {
   flex-direction: column;
   overflow-y: auto;
 }
-
+.top,.nav1{
+  z-index:10;
+}
+.ui{
+  z-index: 111;
+}
 /* 头部 */
 .top {
   flex-direction: column;
@@ -167,6 +192,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index:10;
 }
 .header-1 {
   width: 0.71rem;
@@ -221,7 +247,7 @@ html {
 .direct {
   font-size: 0.1rem;
 }
-.nav {
+.nav1 {
   background: #62ab00;
   height: 0.36rem;
   width: 100%;
@@ -229,19 +255,24 @@ html {
   justify-content: center;
   align-items: center;
 }
-.nav li {
+.nav1 li {
   padding: 0 0.06rem;
   display: flex;
 }
-.nav li a {
+.nav1 li a {
   font-size: 0.15rem;
   color: #e6e6e6;
 }
 /**********************ui********************/
 
 /* list */
+.free_look_house{
+  height: 11.46rem;
+  overflow-y: auto;
+}
 .house_body{
 overflow-x: hidden;
+background: #fff;
 }
 /* .house_content{
   width: 100%;

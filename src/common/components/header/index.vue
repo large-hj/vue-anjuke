@@ -57,9 +57,6 @@
                 <router-link tag="div" to="/lore" class="iconfont">&#xe66e;<a> 登录/注册</a></router-link>
              
             </div>
-            
-                    
-
 
         </van-popup>
  
