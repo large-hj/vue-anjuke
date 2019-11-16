@@ -121,6 +121,20 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
+        // 
+        {
+            path:"/mfkf",
+            component:_=>import("@pages/freelookhouse"),
+            name:"freelookhouse",
+            meta:{
+                flag:true,
+                requiredAuth:false,
+                requiredAuth:false
+            },
+        },
+
+        // 
+
     ]
 })
 
