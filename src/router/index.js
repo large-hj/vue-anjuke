@@ -132,8 +132,13 @@ const router = new VueRouter({
         },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          /************通过路由走免费看房页面***************** * */
          {
+=======
+        // 
+        {
+>>>>>>> hj
             path:"/mfkf",
             component:_=>import("@pages/freelookhouse"),
             name:"freelookhouse",
@@ -143,10 +148,16 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
+<<<<<<< HEAD
 =======
 >>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
 =======
 >>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
+=======
+
+        // 
+
+>>>>>>> hj
     ]
 })
 
