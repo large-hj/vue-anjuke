@@ -6,9 +6,11 @@ import "@common/filter"
 import VueTouch from "vue-touch";
 import store from "./store"
 import "./lib/loading/index.js"
+import { Sticky } from 'vant';
 Vue.use(VueTouch,{name:"v-touch"});
 Vue.config.productionTip = false
 
+Vue.use(Sticky);
 new Vue({
   store,
   router,

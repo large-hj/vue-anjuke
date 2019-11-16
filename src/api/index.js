@@ -44,6 +44,47 @@ export const zxApi = ()=>http({
     }
 })
 
+/**
+ * 
+ * @param:newHouseApi
+ * 接口：新房
+ */
+
+export const newHouseApi = (cid)=>http({
+  method:"get",
+  url:"/xinfang/api/loupan/similarities",
+  data:{
+      cid:cid
+  }
+})
+
+/**
+* 
+* @param:searchApi  kw:模糊查询的数据
+* 接口:搜索
+*/
+export const searchApi = (cid,kw,history_url)=>http({
+  method:"get",
+  url:"/xinfang/api/home/suggest/",
+  data:{
+      cid,
+      kw,
+      history_url
+  }
+})
+
+/**
+* 
+* @param:detailApi  
+* 接口:详情
+*/
+export const detailApi = (cid)=>http({
+  method:"get",
+  url:"/xinfang/api/loupan/similarities",
+  data:{
+      cid,
+  }
+})
 
 /* 
   url:"/jiazhuang/list/case/?lon=&lat=&city_id=14",

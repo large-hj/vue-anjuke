@@ -54,7 +54,7 @@
                 <div class="iconfont">&#xe621;  <a href="http://localhost:8080/#/zx">装修</a> </div>
                 <div class="iconfont">&#xe620;  <a href="http://localhost:8080/#/zx">查房价</a></div>
                 <div class="iconfont">&#xe703;  <a href="http://localhost:8080/#/zx">问答</a> </div>
-                <router-link tag="div" to="/lore" class="iconfont">&#xe66e;<a> 登录/注册</a></router-link>
+                <router-link tag="div" to="/login" class="iconfont">&#xe66e;  <a> 登录注册</a></router-link>
              
             </div>
             

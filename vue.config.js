@@ -3,15 +3,16 @@ const path = require('path');
 module.exports = {
     devServer:{
         proxy:{
+            "/":{
+                target:"https://m.anjuke.com",
+                changeOrigin:true
+            },
             "/api":{
                 target:"http://39.97.33.178",
                 changeOrigin:true
             },
             
-            "/":{
-                target:"https://m.anjuke.com",
-                changeOrigin:true
-            }
+          
            
 
             
