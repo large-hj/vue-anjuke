@@ -58,7 +58,7 @@
              
             </div>
             
-                    
+               <router-view></router-view>     
 
 
         </van-popup>

@@ -9,7 +9,9 @@ import "./lib/loading/index.js"
 import { Sticky } from 'vant';
 Vue.use(VueTouch,{name:"v-touch"});
 Vue.config.productionTip = false
+import { Search } from 'vant';
 
+Vue.use(Search);
 Vue.use(Sticky);
 new Vue({
   store,

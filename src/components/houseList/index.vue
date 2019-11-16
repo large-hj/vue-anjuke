@@ -42,18 +42,21 @@ export default {
    
     created() {
        this.handleGetNewHouseList(10);
+      
    },
   
    methods:{
       async  handleGetNewHouseList(cid){
             let data = await newHouseApi(cid)
             this.newHouseList=[...this.newHouseList,...data.result.rows];
+            sessionStorage.setItem(this.newHouseList,JSON.stringify(this.newHouseList));
        }
    }, 
    mounted() {
        this.$refs.scroll.handlepullingUp(()=>{
              this.handleGetNewHouseList(10);
        })
+       
    },
 }
 </script>
@@ -61,7 +64,6 @@ export default {
 <style lang="scss">
     .main_box{
     width:100%;
-    height:1px;
     background: #fff;
     display: flex;
     flex-direction: column;

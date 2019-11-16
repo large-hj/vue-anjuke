@@ -7,16 +7,37 @@ module.exports = {
                 target:"https://m.anjuke.com",
                 changeOrigin:true
             },
+            // "/home":{
+            //     target:"https://m.anjuke.com",
+            //     changeOrigin:true
+            // },
+            // "/xinfang":{
+            //     target:"https://m.anjuke.com",
+            //     changeOrigin:true
+            // },
+            // "/bj":{
+            //     target:"https://m.anjuke.com",
+            //     changeOrigin:true
+            // },
+            // "/jiazhuang":{
+            //     target:"https://m.anjuke.com",
+            //     changeOrigin:true
+            // },
+            // "/oversea":{
+            //     target:"https://m.anjuke.com",
+            //     changeOrigin:true
+            // },
+            // "/haiwai":{
+            //     target:"https://m.anjuke.com",
+            //     changeOrigin:true
+            // },
             "/api":{
                 target:"http://39.97.33.178",
                 changeOrigin:true
             },
-            
-          
+
            
-
-            
-
+          
         }
     },
     //别名配置

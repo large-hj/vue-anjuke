@@ -156,6 +156,14 @@ const router = new VueRouter({
             path:"/searchhouse",
             component:_=>import("@pages/searchhouse"),
             name:"searchhouse"
+        },
+        {
+            path:"/searchCities",
+            component:_=>import("@pages/searchCities"),
+            meta:{
+                flag:false,
+                requiredAuth:false
+            },
         }
 
     ]

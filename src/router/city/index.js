@@ -5,5 +5,6 @@ export default {
     meta:{
         flag:false,
         requiredAuth:false
-    }
+    },
+   
 }

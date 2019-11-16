@@ -54,22 +54,24 @@ export const newHouseApi = (cid)=>http({
   method:"get",
   url:"/xinfang/api/loupan/similarities",
   data:{
-      cid:cid
+      cid,
   }
 })
 
 /**
 * 
 * @param:searchApi  kw:模糊查询的数据
-* 接口:搜索
+* 接口:搜索楼盘
 */
 export const searchApi = (cid,kw,history_url)=>http({
   method:"get",
-  url:"/xinfang/api/home/suggest/",
+  url:"/xinfang/api/home/suggest",
   data:{
       cid,
       kw,
-      history_url
+      history_url,
+      
+    
   }
 })
 
@@ -86,6 +88,20 @@ export const detailApi = (cid)=>http({
   }
 })
 
+
+/**
+* 
+* @param:SearchCityApi  
+* 接口:搜索城市
+*/
+export const SearchCityApi = ( cid,kw)=>http({
+  method:"get",
+  url:"/api/cityList",
+  data:{
+      cid,
+      kw,
+  }
+})
 /* 
   url:"/jiazhuang/list/case/?lon=&lat=&city_id=14",
 */

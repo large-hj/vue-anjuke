@@ -1,27 +1,29 @@
 <template>
-  <div class="allList">
-    <ul>
-      <router-link  tag="li" :to="/houseDetail/+index+'/'+item.loupan_id" v-for="(item,index) in allList" :key="index">
-        <div class="list_img">
-          <img :src="item.default_image" alt />
-        </div>
-        <div class="list_txt">
-          <h4>{{item.loupan_name}}</h4>
-          <span>{{item.region_title}} {{item.subregion_title}} 建面 {{item.jianzhu_area}}</span>
-          <p>{{item.unit_price}}{{item.new_price.unit}}</p>
-          <div class="labels">
-            <em :class="item.has_qiang?'saleHouseTag on-sale':'saleHouseTag pending-sale'">{{item.new_status_sale}}</em>
-            <em class="defaultTag ui-tag_grey">{{item.new_price.property_desc}}</em>
-            <em class="defaultTag ui-tag_grey">{{item.loupan_tags[1]}}</em>
+ <List-scroll ref="scroll">
+    <div class="allList">
+      <ul>
+        <router-link  tag="li" :to="/houseDetail/+index+'/'+item.loupan_id" v-for="(item,index) in allList" :key="index">
+          <div class="list_img">
+            <img :src="item.default_image" alt />
           </div>
-          <div class="g-overflow">
-            <i>{{item.has_hui?'惠':'热'}}</i>
-            <span class="adv-ctx">{{item.qiang_desc}}</span>
+          <div class="list_txt">
+            <h4>{{item.loupan_name}}</h4>
+            <span>{{item.region_title}} {{item.subregion_title}} 建面 {{item.jianzhu_area}}</span>
+            <p>{{item.unit_price}}{{item.new_price.unit}}</p>
+            <div class="labels">
+              <em :class="item.has_qiang?'saleHouseTag on-sale':'saleHouseTag pending-sale'">{{item.new_status_sale}}</em>
+              <em class="defaultTag ui-tag_grey">{{item.new_price.property_desc}}</em>
+              <em class="defaultTag ui-tag_grey">{{item.loupan_tags[1]}}</em>
+            </div>
+            <div class="g-overflow">
+              <i>{{item.has_hui?'惠':'热'}}</i>
+              <span class="adv-ctx">{{item.qiang_desc}}</span>
+            </div>
           </div>
-        </div>
-     </router-link>
-    </ul>
-  </div>
+      </router-link>
+      </ul>
+    </div>
+   </List-scroll>
 </template>
 
 <script>
@@ -34,23 +36,31 @@ export default {
       allList: []
     };
   },
+  watch:{
+    allList(){
+      this.$refs.scroll.handlepullingUp();
+    }
+  },
   created() {
     this.handleGetAllList(10);
   },
   methods: {
     async handleGetAllList(cid) {
       let data = await newHouseApi(cid);
-      this.allList = data.result.rows;
+      this.allList = [...this.allList,...data.result.rows];
     }
+  },
+  mounted(){
+    this.$refs.scroll.handlepullingUp(()=>{
+            this.handleGetAllList(15);
+      })
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.allList,
-ul {
+.allList{
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   li {

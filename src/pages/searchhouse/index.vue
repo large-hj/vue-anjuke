@@ -11,24 +11,24 @@
       <v-touch tag="span" @tap="handleCancel()" class="cancel">取消</v-touch> 
     </div>
     <div class="search-ctx">
-      <div class="hotSearch" v-if="status">
-        <h3>热搜楼盘</h3>
-        <div class="search-item">
-          <div class="search-tag" v-for="(item,index) in menu" :key="index">{{item}}</div>
+        <div class="hotSearch" v-if="status">
+          <h3>热搜楼盘</h3>
+          <div class="search-item">
+            <div class="search-tag" v-for="(item,index) in menu" :key="index">{{item}}</div>
+          </div>
         </div>
-      </div>
-      <div class="list"  v-if="flag">
-        <div class="item">
+      <div class="list" v-show="flag" >
+        <div class="item" v-for="(item,index) in list" :key="index" >
             <div class="name">
                  <div class="tit">
-                    <p class="title">浦江坤庭</p>
-                    <p class="other">别名:<strong >龙之湾嘉园</strong></p>
+                    <p class="title">{{item.name}}</p>
+                    <p class="other">别名:<strong >{{item.nameEm}}</strong></p>
                 </div>
-                <p class="sale-status">在售</p>
+                <p class="sale-status">{{item.saleStatusName}}</p>
             </div>
             <div class="name">
                  <div class="tit">
-                    <p class="other">昌化路780弄</p>
+                    <p class="other">{{item.addrEm}}</p>
                 </div>
                 <p class="sale-status">61207㎡</p>
             </div>
@@ -60,13 +60,16 @@ export default {
         "大运河智慧中心",
         "北京壹号院",
         "尚峯壹號"
-      ]
+      ],
+      url:'https:%2F%2Fm.anjuke.com%2Fbj%2Fxinfang%2F%3Ffrom%3Danjuke_home',
     };
   },
+ 
+
   watch: {
     async value(newVal) {
       throttle(async ()=>{
-         let data = await searchApi(2,newVal);
+         let data = await searchApi(14,newVal,this.url);
          this.list=data.result.loupan?data.result.loupan:[];
          console.log(data)
       },300)
@@ -137,6 +140,7 @@ export default {
 .search-item {
   width: 3rem;
   height: 1.68rem;
+  margin-top:.1rem;
 }
 .search-item .search-tag {
   border: 1px solid #e6e6e6;
@@ -157,6 +161,7 @@ export default {
   flex-direction: column;
   padding-left: 0.04rem;
   background: #fff;
+  margin-top:.15rem;
 }
 .item {
   height: 0.55rem;
@@ -165,26 +170,35 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding:0 10px;
+  padding:10px;
 }
 .item .name {
   width: 100%;
-  height: 0.22rem;
+  height: 0.24rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .name .tit {
       display: flex;
+      
 }
 .name .tit .title{
         color: #333;
         font-size: .15rem;
-        margin-right: 6px;         
+        margin-right: 6px;   
+         width:1.2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;      
 }
 .name .tit .other{
     font-size: .12rem;
     color:#999;
+    width:1.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .name .sale-status{
@@ -195,15 +209,14 @@ export default {
     color: red;
 }
 .clear{
-  width:.2rem;
-  height:.2rem;
+  width:.15rem;
+  height:.15rem;
   border:1px solid #f0f0f0;
   background: #f0f0f0;
   color:#fff;
   border-radius: 50%;
-  font-size: .16rem;
- display: flex;
- align-items: center;
- justify-content: center;
+  font-size: .12rem;
+ text-align: center;
+ line-height: .15rem;
 }
 </style>
