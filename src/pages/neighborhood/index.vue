@@ -2,11 +2,11 @@
   <div class="free_look_house">
     <div class="top">
       <div class="header">
-        <v-touch tag="div" @tap="backfindneighborhood()" class="header-1">安居客</v-touch>
+        <div class="header-1">安居客</div>
         <div class="header-2">
           <div class="address">
             <span class="site">无锡</span>
-            <i class="iconfont icon1">&#xe6aa;</i>
+            <i class="iconfont">&#xe6aa;</i>
           </div>
 
           <router-link tag="div" to="/search" class="search">
@@ -20,7 +20,7 @@
         </div>
       </div>
       <!-- 导航 -->
-      <ul class="nav1">
+      <ul class="nav">
         <li>
           <a href>二手房</a>
         </li>
@@ -41,14 +41,14 @@
         </li>
       </ul>
     </div>
-
-    <van-dropdown-menu class="ui1">
-      <van-dropdown-item class="ui" v-model="value1" :options="option1" />
-      <van-dropdown-item v-model="value2" :options="option2" />
-      <van-dropdown-item v-model="value3" :options="option3" />
-      <van-dropdown-item v-model="value4" :options="option4" />
-    </van-dropdown-menu>
-
+    <div>
+      <van-dropdown-menu >
+        <van-dropdown-item v-model="value1" :options="option1"></van-dropdown-item>
+        <van-dropdown-item v-model="value2" :options="option2"></van-dropdown-item>
+        <van-dropdown-item v-model="value3" :options="option3"></van-dropdown-item>
+        <van-dropdown-item v-model="value4" :options="option4"></van-dropdown-item>
+      </van-dropdown-menu>
+    </div>
     <!-- list页 -->
     <Alley-scroll>
     <div class="house_body">
@@ -89,12 +89,11 @@
   </div>
 </template>
 <script>
-import Vue from "vue";
-import { DropdownMenu, DropdownItem } from "vant";
+import Vue from 'vue';
+import { DropdownMenu, DropdownItem } from 'vant';
 Vue.use(DropdownMenu).use(DropdownItem);
 import { neighborhoodApi } from "@api/neighborhood";
-/************引入better-scrill,此过程用分装实现*********************/
-// import BScorll from "better-scroll";
+// import Loading from "@lib/loading";
 export default {
   // name:"Neighborhood",
   // name: "Alley-scroll",
@@ -110,19 +109,19 @@ export default {
         { text: "区域", value: 0 },
         { text: "朝阳", value: 1 },
         { text: "海淀", value: 2 },
-        { text: "海淀", value: 3 }
+        { text: "海淀", value: 3 },
       ],
       option2: [
         { text: "价格", value: "a" },
         { text: "8000元以下", value: "b" },
         { text: "8000-1万", value: "c" },
-        { text: "1-1.5万", value: "d" }
+        { text: "1-1.5万", value: "d" },
       ],
       option3: [
         { text: "特色", value: "a" },
         { text: "绿化优美", value: "b" },
         { text: "别墅", value: "c" },
-        { text: "次新房", value: "d" }
+        { text: "次新房", value: "d" },
       ],
       option4: [
         { text: "排序", value: "a" },
@@ -142,14 +141,12 @@ export default {
       //页面渲染
       this.lists = data.data.rows;
       console.log(data.data.rows);
-    },
-    backfindneighborhood() {
-      this.$router.back();
     }
   }
 };
 </script>
 <style scoped>
+
 body,
 html {
   display: flex;
@@ -166,7 +163,7 @@ html {
   width: 100%;
   height: 0.46rem;
   background: #62ab00;
-  padding: 0 0.08rem;
+  padding: 0 0.1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -218,15 +215,13 @@ html {
   justify-content: center;
   align-items: center;
 }
-.icon1,
-.icon2,
 .icon3 {
   font-size: 0.14rem;
 }
 .direct {
   font-size: 0.1rem;
 }
-.nav1 {
+.nav {
   background: #62ab00;
   height: 0.36rem;
   width: 100%;
@@ -234,19 +229,15 @@ html {
   justify-content: center;
   align-items: center;
 }
-.nav1 li {
+.nav li {
   padding: 0 0.06rem;
   display: flex;
 }
-.nav1 li a {
+.nav li a {
   font-size: 0.15rem;
   color: #e6e6e6;
 }
 /**********************ui********************/
-.ui1 {
-  height: 0.5rem;
-  font-size: 0.2rem;
-}
 
 /* list */
 .house_body{
@@ -258,7 +249,7 @@ overflow-x: hidden;
 .list {
   width: 100%;
   height: 1.33rem;
-  padding: 0.1rem;
+  padding: 0.15rem;
   display: flex;
   border-bottom: 1px solid #ccc;
   justify-content: flex-start;
@@ -267,7 +258,7 @@ overflow-x: hidden;
 .list .img {
   display: inline-block;
   width: 40%;
-  height: 1rem;
+  height: 0.81rem;
 }
 .list .img img {
   width: 100%;
@@ -298,12 +289,12 @@ overflow-x: hidden;
   margin-top: 0.03rem;
 }
 .content .last span {
-  padding-right: 0.06rem;
+  padding-right: 0.05rem;
   color: cyan;
 }
 .content .last span i {
   color: black;
-  font-size: 0.13rem;
+  font-size: 0.12rem;
 }
 .content .last a {
   color: black;
@@ -312,7 +303,7 @@ overflow-x: hidden;
 }
 .content .ys {
   display: inline-block;
-  height: 0.19rem;
+  height: 0.17rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -323,7 +314,6 @@ overflow-x: hidden;
   background: #f3f8fa;
   color: #7dafe8;
   margin-left: 0.02rem;
-  font-size: 0.11rem;
 }
 .content .last .yue {
   color: #e54b00;
@@ -335,7 +325,7 @@ overflow-x: hidden;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 0.12rem;
+  font-size: 0.1rem;
   margin-top: 0.04rem;
 }
 </style>>

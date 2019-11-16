@@ -11,8 +11,39 @@ import BScroll from "better-scroll";
 export default {
   name: "Alley-scroll",
   mounted() {
-   new BScroll(this.$refs.wrapper)
-
+    this.scroll = new BScroll(this.$refs.wrapper, {
+      //开启下拉刷新
+      pullDownRefresh: true,
+      //开启上拉加载更多
+      pullUpLoad: true,
+      //scroll事件的配置项
+      probeType:1
+    });
+  },
+  methods: {
+    handleScroll(){
+        this.scroll.on("scroll",this.handleScrollCb)
+    },
+    handleScrollCb({y}){
+      if(y>50 && (!this.loadingFlag)){
+            this.loadingFlag = true;
+        }
+    },
+    //下拉刷新
+    handlepullingDown(callback) {
+      this.scroll.on("pullingDown", () => {
+        callback();
+      });
+    },
+    handlefinishPullDown() {
+      //通知better-scroll进行下一次下拉刷新
+      this.scroll.finishPullDown();
+      //重新计算better-scroll;
+      this.scroll.refresh();
+        setTimeout(()=>{
+            this.loadingFlag = false;
+        },500)
+    }
   }
 };
 </script>

@@ -59,6 +59,11 @@ export default {
   width: 100%;
   box-sizing: border-box;
   padding: 0.07rem 0.15rem;
+  height: 50px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 7px 15px;
   background: #ececec;
   border-bottom: 1px solid #d9d9d9;
   display: flex;
@@ -72,6 +77,7 @@ export default {
     background: #fff;
     color: #999;
     padding: 0 0 0 0.1rem;
+    outline: 0;
   }
   .cancle{
     display: block;

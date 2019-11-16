@@ -1,56 +1,54 @@
 <template>
   <div class="box">
-    <div class="header">
-      <div class="logo">
-        <img
-          src="https://pages.anjukestatic.com/usersite/touch/img/user/login/icon_logo@3x.png"
-          alt
-        />
-      </div>
-    </div>
-
     <div id="login_content">
       <div class="login_username">
-        <input type="text" placeholder="账户名/手机号/Email" />
+        <input type="text" placeholder="账户名/手机号/Email"  v-model="val1" />
       </div>
       <div class="login_password">
-        <input type="password" placeholder="请输入您的密码" />
+        <input type="password" placeholder="请输入您的密码" v-model="val2" />
       </div>
       <div class="login_btn">
-        <input type="submit" value="登录" />
+        <input type="submit" value="注册" @click="submitRegister()" />
       </div>
-      <div class="login_link">
-        <p>立即注册</p>
-        <p>找回密码</p>
-      </div>
-    </div>
+    </div> 
   </div>
 </template>
 
 
 <script>
-export default {};
+  name:"register"
+export default {
+  data(){
+    return{
+      val1:'',
+      val2:'',
+
+    }
+  },
+  methods:{
+    submitRegister(){
+        let username=this.val1;
+        let password=this.val2;
+        console.log(username)
+        $.ajax({
+            type:"post",
+            url:"users.js/register",
+            data:{
+                username,
+                password
+            },
+          success:(data)=>{
+              console.log(data)
+          }
+        })
+    }
+  }
+};
 </script>
 
 
 
 <style scoped>
-.header {
-  width: 100%;
-  height: 0.8rem;
-  overflow: hidden;
-  margin-bottom: 0.2rem;
-}
-.header .logo {
-  width: 1.27rem;
-  height: 0.4rem;
-  margin: 0 auto;
-  margin-top: 0.4rem;
-}
-.header .logo img {
-  width: 100%;
-  height: 100%;
-}
 
 #login_content .login_username {
     width: 100%;
@@ -96,12 +94,12 @@ export default {};
     font-size: .16rem;
 }
 
-#login_content .login_link{
+.login_link{
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: .1rem .2rem;
     font-size: .16rem;
 }
-</style>>
+</style>
 

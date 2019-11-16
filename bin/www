@@ -1,0 +1,67 @@
+// 引入app模块
+var app = require('../app');
+// 引入debug模块
+var debug = require('debug')('node:server');
+// 引入http模块
+var http = require('http');
+
+// 设置端口号
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+// 创建服务
+var server = http.createServer(app);
+
+// 绑定端口号
+server.listen(port);
+// 当服务器报错时候处理的函数
+server.on('error', onError);
+// 当服务器运行时候监听的函数
+server.on('listening', onListening);
+
+// 端口号值的判断
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+// 报错处理
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+// 报错处理
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

@@ -1,7 +1,12 @@
 <template>
   <div class="box">
     <header>
-      <v-touch tag="span" @tap="handlebackAd()"><i class="iconfont icon1">&#xe600;</i></v-touch>
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 89f2ff576c0eb186665425d4e6b6924326a76f50
+      <v-touch tag="span" @tap="handlebackAd()"><i class="iconfont">&#xe600;</i></v-touch>
       <span>楼盘详情</span>
       <span></span>
     </header>
@@ -150,6 +155,8 @@ header span {
 .detial > div .p1 {
   height: 0.48rem;
   font-size: 0.2rem;
+  font-size: 20px;
+  line-height: 24px;
   font-weight: 400;
 }
 
@@ -171,6 +178,12 @@ a:nth-of-type(4) {
   margin: 0 0 0 0.03rem;
   padding: 0.03rem 0.05rem;
   font-size: 0.12rem;
+  margin: 0 0 0 3px;
+  padding: 3px 5px;
+  font-size: 12px;
+  margin: 0 0 0 3px;
+  padding: 3px 5px;
+  font-size: 12px;
   line-height: 1;
   color: #bbbaba;
   background: #faf9f9;
@@ -185,10 +198,6 @@ a:nth-of-type(4) {
 }
 .info p:nth-of-type(2) {
   display: flex;
-}
-.info p:nth-of-type(1) span:nth-of-type(1) {
-  color: #a1a6ac;
-  font-size: 0.15rem;
 }
 .info p:nth-of-type(1) span:nth-of-type(2) {
   display: inline-block;

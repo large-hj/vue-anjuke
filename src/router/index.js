@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import city from "./city"
+import Register from "../components/register"
+import Login from "../components/lo"
+
 Vue.use(VueRouter);
 
 
@@ -13,6 +16,10 @@ const router = new VueRouter({
             redirect:"/movie"
         },
         {
+            path:"/lore",
+            redirect:"/lore/login"
+        },
+        {
             path:"/movie",
             component:_=>import("@pages/movie"),
             name:"movie",
@@ -23,14 +30,7 @@ const router = new VueRouter({
         },
         city,
        
-        {
-            path:"/login",
-            name:"login",
-            component:_=>import("@pages/login"),
-            meta:{
-                flag:false
-            }
-        },
+
         {
             path:"/detail/:id/:index/:loupan",
             name:"detail",
@@ -58,6 +58,44 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
+        {
+            path:"/lore",
+            component:_=>import("@pages/lore"),
+            name:"lore",
+            meta:{
+                flag:true,
+                requiredAuth:false
+            },
+            children:[
+                // {
+                //     path:"/lore",
+                //     redirect:"/lore/login"
+                // },
+                
+                {
+                    path:"register",
+                    component:Register,
+                    name:"register",
+                    meta:{
+                        flag:true,
+                        requiredAuth:false
+                    },
+                },
+                {
+                    path:"login",
+                    component:Login,
+                    name:"login",
+                    meta:{
+                        flag:true,
+                        requiredAuth:false
+                    },
+                },
+                
+                
+            ]
+        },
+
+
           /************通过路由走经纪人页面***************** * */
         {
             path:"/broker",
@@ -85,6 +123,7 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
+
          /************通过路由走免费看房页面***************** * */
          {
             path:"/mfkf",
@@ -96,22 +135,23 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
+
     ]
 })
 
 
 
-router.beforeEach((to,from,next)=>{
-    if(to.path !="/login" && to.meta.requiredAuth){
-        if(localStorage.getItem("token")){
-            next();
-        }else{
-            next({name:"login",params:{to:to.path}})
-        }
+// router.beforeEach((to,from,next)=>{
+//     if(to.path !="/login" && to.meta.requiredAuth){
+//         if(localStorage.getItem("token")){
+//             next();
+//         }else{
+//             next({name:"login",params:{to:to.path}})
+//         }
 
-    }else{
-        next();
-    }
-})
+//     }else{
+//         next();
+//     }
+// })
 
 export default router;
