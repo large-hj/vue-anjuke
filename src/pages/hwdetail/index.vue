@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <header>
-      <v-touch tag="span" @tap="handlebackAd()"><i class="iconfont icon1">&#xe600;</i></v-touch>
+      <v-touch tag="span" @tap="handlebackAd()"><i class="iconfont">&#xe600;</i></v-touch>
       <span>楼盘详情</span>
       <span></span>
     </header>
@@ -25,8 +25,8 @@
       <div class="info">
         <p>
           <span>总价</span>
-          <span>￥682万/套起</span>
-          <!-- <span>￥{{detail.price.price_min}}万/套起</span> -->
+          <span>¥682万/套起</span>
+          <!-- <span>¥{{detail.price.price_min}}万/套起</span> -->
         </p>
         <p>
           <span>地址</span>
@@ -111,10 +111,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.13rem;
-  opacity: rgba(0, 0, 0, 0.103);
-}
-.icon1{
-  font-size: 0.16rem;
 }
 header span {
   font-size: 0.14rem;
@@ -149,7 +145,8 @@ header span {
 }
 .detial > div .p1 {
   height: 0.48rem;
-  font-size: 0.2rem;
+  font-size: 20px;
+  line-height: 24px;
   font-weight: 400;
 }
 
@@ -168,9 +165,9 @@ header span {
 a:nth-of-type(3),
 a:nth-of-type(4) {
   display: inline-block;
-  margin: 0 0 0 0.03rem;
-  padding: 0.03rem 0.05rem;
-  font-size: 0.12rem;
+  margin: 0 0 0 3px;
+  padding: 3px 5px;
+  font-size: 12px;
   line-height: 1;
   color: #bbbaba;
   background: #faf9f9;

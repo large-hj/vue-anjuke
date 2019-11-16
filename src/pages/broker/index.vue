@@ -2,30 +2,14 @@
   <div class="box_broker">
     <header class="header">
       <v-touch tag="span" @tap="handleBack()">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <i class="iconfont icon1">&#xe600;</i>返回
-=======
         <i class="iconfont">&#xe600;</i>返回
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
-=======
-        <i class="iconfont">&#xe600;</i>返回
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
       </v-touch>
       <span>
         经纪人
         <i class="iconfont icon2">&#xe658;</i>
       </span>
       <span>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <i class="iconfont icon3">&#xe613;</i>
-=======
         <i class="iconfont">&#xe613;</i>
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
-=======
-        <i class="iconfont">&#xe613;</i>
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
       </span>
     </header>
     <!-- 导航 -->
@@ -49,25 +33,11 @@
           <a href class="phone">电话咨询</a>
         </div>
         <div class="star">
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <i class="iconfont icon">&#xe676;</i>
-          <i class="iconfont icon">&#xe676;</i>
-          <i class="iconfont icon">&#xe676;</i>
-          <i class="iconfont icon">&#xe676;</i>
-          <i class="iconfont icon">&#xe676;</i>
-=======
-=======
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
           <i class="iconfont">&#xe676;</i>
           <i class="iconfont">&#xe676;</i>
           <i class="iconfont">&#xe676;</i>
           <i class="iconfont">&#xe676;</i>
           <i class="iconfont">&#xe676;</i>
-<<<<<<< HEAD
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
-=======
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
         </div>
         <div class="service">
           <div>北京市易合房地产经纪有限责任公司</div>
@@ -141,19 +111,8 @@ export default {
   font-size: 0.16rem;
   color: #fff;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-.icon2,.icon1,.icon3 {
-  font-weight: 300;
-  font-size: 0.16rem;
-=======
 .icon2 {
   font-weight: 300;
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
-=======
-.icon2 {
-  font-weight: 300;
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
 }
 /*************导航**************/
 .nav {
@@ -206,14 +165,7 @@ export default {
       width: 0.76rem;
       height: 0.24rem;
       line-height: 0.24rem;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
       line-height: 24px;
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
-=======
-      line-height: 24px;
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
       color: #62ab00;
       border: 1px solid #62ab00;
       border-radius: 0.04rem;
@@ -229,15 +181,6 @@ export default {
   display: flex;
   font-size: 0.14rem;
   align-items: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  .icon{
-    font-size: 0.16rem;
-  }
-=======
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
-=======
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
 }
 .service {
   height: 0.26rem;

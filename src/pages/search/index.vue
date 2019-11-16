@@ -55,10 +55,11 @@ export default {
 <style scoped lang="scss">
 .searchhead {
   position: relative;
-  height: 0.5rem;
+  height: 50px;
   width: 100%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0.07rem 0.15rem;
+  padding: 7px 15px;
   background: #ececec;
   border-bottom: 1px solid #d9d9d9;
   display: flex;
@@ -66,12 +67,13 @@ export default {
     display: block;
     height: 0.3rem;
     width: 100%;
-    border-radius: 0.03rem;
+    border-radius: 3px;
     border: 1px solid #ebebeb;
     font-size: 0.14rem;
     background: #fff;
     color: #999;
-    padding: 0 0 0 0.1rem;
+    outline: 0;
+    padding: 0 0 0 10px;
   }
   .cancle{
     display: block;
@@ -83,6 +85,7 @@ export default {
     padding: 0;
     border: 0;
     color: #62ab00;
+    box-sizing: border-box;
     margin-right: 0.05rem;
   }
 }
