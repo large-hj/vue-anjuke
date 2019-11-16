@@ -55,10 +55,18 @@ export default {
 <style scoped lang="scss">
 .searchhead {
   position: relative;
+<<<<<<< HEAD
   height: 0.5rem;
   width: 100%;
   box-sizing: border-box;
   padding: 0.07rem 0.15rem;
+=======
+  height: 50px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 7px 15px;
+>>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
   background: #ececec;
   border-bottom: 1px solid #d9d9d9;
   display: flex;
@@ -66,12 +74,21 @@ export default {
     display: block;
     height: 0.3rem;
     width: 100%;
+<<<<<<< HEAD
     border-radius: 0.03rem;
+=======
+    border-radius: 3px;
+>>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
     border: 1px solid #ebebeb;
     font-size: 0.14rem;
     background: #fff;
     color: #999;
+<<<<<<< HEAD
     padding: 0 0 0 0.1rem;
+=======
+    outline: 0;
+    padding: 0 0 0 10px;
+>>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
   }
   .cancle{
     display: block;
@@ -83,6 +100,10 @@ export default {
     padding: 0;
     border: 0;
     color: #62ab00;
+<<<<<<< HEAD
+=======
+    box-sizing: border-box;
+>>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
     margin-right: 0.05rem;
   }
 }
