@@ -4,10 +4,6 @@
 
 
       <v-touch tag="span" @tap="handlebackAd()"><i class="iconfont">&#xe600;</i></v-touch>
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
-=======
-      <v-touch tag="span" @tap="handlebackAd()"><i class="iconfont">&#xe600;</i></v-touch>
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
       <span>楼盘详情</span>
       <span></span>
     </header>
@@ -117,16 +113,10 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.13rem;
-<<<<<<< HEAD
-<<<<<<< HEAD
   opacity: rgba(0, 0, 0, 0.103);
 }
 .icon1{
   font-size: 0.16rem;
-=======
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
-=======
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
 }
 header span {
   font-size: 0.14rem;
@@ -161,17 +151,9 @@ header span {
 }
 .detial > div .p1 {
   height: 0.48rem;
-<<<<<<< HEAD
-<<<<<<< HEAD
   font-size: 0.2rem;
-=======
   font-size: 20px;
   line-height: 24px;
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
-=======
-  font-size: 20px;
-  line-height: 24px;
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
   font-weight: 400;
 }
 
@@ -190,21 +172,15 @@ header span {
 a:nth-of-type(3),
 a:nth-of-type(4) {
   display: inline-block;
-<<<<<<< HEAD
-<<<<<<< HEAD
   margin: 0 0 0 0.03rem;
   padding: 0.03rem 0.05rem;
   font-size: 0.12rem;
-=======
   margin: 0 0 0 3px;
   padding: 3px 5px;
   font-size: 12px;
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
-=======
   margin: 0 0 0 3px;
   padding: 3px 5px;
   font-size: 12px;
->>>>>>> a0031d9bb365224fac4fa08b2dacd44e1ff76760
   line-height: 1;
   color: #bbbaba;
   background: #faf9f9;
@@ -219,10 +195,6 @@ a:nth-of-type(4) {
 }
 .info p:nth-of-type(2) {
   display: flex;
-}
-.info p:nth-of-type(1) span:nth-of-type(1) {
-  color: #a1a6ac;
-  font-size: 0.15rem;
 }
 .info p:nth-of-type(1) span:nth-of-type(2) {
   display: inline-block;
