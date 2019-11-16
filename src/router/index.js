@@ -94,6 +94,8 @@ const router = new VueRouter({
                 
             ]
         },
+
+
           /************通过路由走经纪人页面***************** * */
         {
             path:"/broker",
@@ -121,8 +123,9 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
-        // 
-        {
+
+         /************通过路由走免费看房页面***************** * */
+         {
             path:"/mfkf",
             component:_=>import("@pages/freelookhouse"),
             name:"freelookhouse",
@@ -132,7 +135,6 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
-
         newHouse,
         {
             name:"allHouse",
