@@ -50,6 +50,15 @@ const router = new VueRouter({
             }
         },
         {
+            path:"/secondHand",
+            name:"secondHand",
+            props:true,
+            component:_=>import("@pages/secondHand"),
+            meta:{
+                flag:false
+            }
+        },
+        {
             path:"/zxq",
             component:_=>import("@pages/neighborhood"),
             name:"neighborhood",

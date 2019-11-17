@@ -12,9 +12,8 @@
         <i class="iconfont icon-xialajiantou"></i>
       </div>
       <div class="BizHeader-detail">
-        <span>新房</span>
-        <span>二手房</span>
-        <span>租房</span>
+       <router-link tag="span" to="/newHouse">新房</router-link>
+        <router-link tag="span" to="/secondHand">二手房</router-link>
         <span  @click="showPopup" class="iconfont">&#xe712;</span>
       </div>
     </div>
@@ -42,7 +41,7 @@
                 <i class="iconfont icon-xialajiantou"></i>
                 </div>
                 <div class="BizHeader-detail">
-                <span>新房</span>
+                <router-link tag="span" to="/newHouse">新房</router-link>
                 <span>二手房</span>
                 <span>租房</span>
                 <span  @click="showPopup" class="iconfont">&#xe712;</span>
@@ -54,7 +53,7 @@
                 <div class="iconfont">&#xe621;  <a href="http://localhost:8080/#/zx">装修</a> </div>
                 <div class="iconfont">&#xe620;  <a href="http://localhost:8080/#/zx">查房价</a></div>
                 <div class="iconfont">&#xe703;  <a href="http://localhost:8080/#/zx">问答</a> </div>
-                <router-link tag="div" to="/login" class="iconfont">&#xe66e;  <a> 登录注册</a></router-link>
+                <router-link tag="div" to="/lore/login" class="iconfont">&#xe66e;  <a> 登录注册</a></router-link>
              
             </div>
             
