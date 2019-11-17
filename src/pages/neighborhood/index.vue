@@ -22,7 +22,7 @@
       <!-- 导航 -->
       <ul class="nav1">
         <li>
-          <a href>二手房</a>
+          <router-link tag="a" to="/q_answers">百度问答</router-link>
         </li>
         <li>
           <a>小区</a>
@@ -46,45 +46,48 @@
         <van-dropdown-item v-model="value1" :options="option1"></van-dropdown-item>
         <van-dropdown-item v-model="value2" :options="option2"></van-dropdown-item>
         <van-dropdown-item v-model="value3" :options="option3"></van-dropdown-item>
-        <van-dropdown-item v-model="value4" :options="option4"></van-dropdown-item>
+        <div @click="handlesort()">
+
+          <van-dropdown-item v-model="value4" :options="option4" ></van-dropdown-item>
+        </div>
       </van-dropdown-menu>
     </div>
     <!-- list页 -->
     <Alley-scroll ref="scroll">
-    <div class="house_body">
-      <div class="house_content">
-        <router-link
-          class="list"
-          v-for="(item,index) in lists "
-          :key="index"
-           tag="div"
-          :to="'/hwdetail/'+item.loupan_id"
-        >
-          <div class="img">
-            <img :src="item.image" />
-          </div>
-          <div class="content">
-            <span class="strong">{{item.loupan_name_cn}}</span>
-            <span>
-              {{item.country_name}}
-              <i>| {{item.city_name}}</i>
-            </span>
-            <span class="ys">
-              <i v-for="(child,index) in item.property" :key="index">{{child}}</i>
-            </span>
-            <div class="last">
-              <span class="yue">
-                约￥
-                <i class="money">{{item.loupan_price}}</i>万元
-                <i></i> |
-                <i>{{item.fangyuan_area}}m</i>
-              </span>
-              <i class="adv">{{item.rec_reason}}</i>
+      <div class="house_body">
+        <div class="house_content">
+          <router-link
+            class="list"
+            v-for="(item,index) in lists "
+            :key="index"
+            tag="div"
+            :to="'/hwdetail/'+item.loupan_id"
+          >
+            <div class="img">
+              <img :src="item.image" />
             </div>
-          </div>
-        </router-link>
+            <div class="content">
+              <span class="strong">{{item.loupan_name_cn}}</span>
+              <span>
+                {{item.country_name}}
+                <i>| {{item.city_name}}</i>
+              </span>
+              <span class="ys">
+                <i v-for="(child,index) in item.property" :key="index">{{child}}</i>
+              </span>
+              <div class="last">
+                <span class="yue">
+                  约￥
+                  <i class="money">{{item.loupan_price}}</i>万元
+                  <i></i> |
+                  <i>{{item.fangyuan_area}}m</i>
+                </span>
+                <i class="adv">{{item.rec_reason}}</i>
+              </div>
+            </div>
+          </router-link>
+        </div>
       </div>
-    </div>
     </Alley-scroll>
   </div>
 </template>
@@ -123,8 +126,8 @@ export default {
       ],
       option4: [
         { text: "排序", value: "a" },
-        { text: "价格升序", value: "b" },
-        { text: "价格降序", value: "c" }
+        { text: "价格升序", value: "asc" },
+        { text: "价格降序", value: "desc" }
       ]
     };
   },
@@ -137,7 +140,7 @@ export default {
   },
   /*******************/
   created() {
-    this.handleGetNewHouseList(8);
+    this.handleGetNewHouseList(2);
   },
   methods: {
     async handleGetNewHouseList(page) {
@@ -145,12 +148,21 @@ export default {
       let data = await neighborhoodApi(page);
       //页面渲染
       this.lists = data.data.rows;
-      // console.log(data.data.rows);
+      console.log(data.data.rows);
       
     },
     handlebacksy(){
       this.$router.back();
-    }
+    },
+    /**********************排序 */
+   
+  handlesort(){
+    let value=this.option4[0].value;
+    
+  
+    
+   
+  }
   },
 /**********下拉刷新***************/
     mounted(){
@@ -163,20 +175,21 @@ export default {
       this.$refs.scroll.handleScroll();
   }
   /******************************/
+  
 };
 </script>
 <style scoped>
-
 body,
 html {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
 }
-.top,.nav1{
-  z-index:10;
+.top,
+.nav1 {
+  z-index: 10;
 }
-.ui{
+.ui {
   z-index: 111;
 }
 /* 头部 */
@@ -192,7 +205,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index:10;
+  z-index: 10;
 }
 .header-1 {
   width: 0.71rem;
@@ -266,13 +279,13 @@ html {
 /**********************ui********************/
 
 /* list */
-.free_look_house{
+.free_look_house {
   height: 11.46rem;
   overflow-y: auto;
 }
-.house_body{
-overflow-x: hidden;
-background: #fff;
+.house_body {
+  overflow-x: hidden;
+  background: #fff;
 }
 /* .house_content{
   width: 100%;

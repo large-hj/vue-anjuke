@@ -11,22 +11,16 @@ export const neighborhoodApi=(page)=>http({
 export const hwdetailApi=(loupan_id)=>http({
     method:"get",
     url:"/oversea/loupan/view/?loupan_id="+loupan_id,
-//    data:{
-//     // loupan_id,
-//     }
 });
 
 
 /*****************模糊查询********************/
 
-export const searchApi=(loupan_id)=>http({
+export const searchApi=(value)=>http({
     method:"get",
-    url:"/oversea/loupan/view/?loupan_id="+loupan_id,
-   data:{
-    loupan_id,
-    }
+    url:"/ajax/suggest/?q="+value+"&limit=8",
 });
-
+//https://m.anjuke.com/ajax/suggest/?q=c&limit=8
 /*****************经纪人********************/
 export const brokerApi=(p)=>http({
     method:"get",

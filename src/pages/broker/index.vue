@@ -23,7 +23,7 @@
     </van-dropdown-menu>
     <div class="hide1"></div>
     <!-- 内容 -->
-    <div class="content" v-for="(item,index) in list" :key="index">
+    <div class="content_broker" v-for="(item,index) in list" :key="index">
       <div class="content1">
         <img :src="item.user_photo" />
       </div>
@@ -129,7 +129,7 @@ export default {
   color: #333333;
 }
 /* list */
-.content {
+.content_broker {
   height: 1.3rem;
   padding: 0.13rem;
   display: flex;

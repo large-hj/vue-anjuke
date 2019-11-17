@@ -132,9 +132,42 @@ const router = new VueRouter({
             meta:{
                 flag:true,
                 requiredAuth:false,
-                requiredAuth:false
             },
         },
+
+         /************通过路由走百度问答页面***************** * */
+         {
+            path:"/q_answers",
+            component:_=>import("@pages/Qanswers"),
+            name:"Qanswers",
+            children:[
+                 {
+                    path:"/",
+                    redirect:"/all"
+                },
+                {
+                    path:"/all",
+                    component:_=>import("@components/all"),
+                    name:"all",
+                },
+                {
+                    path:"/buy",
+                    component:_=>import("@components/buy"),
+                    name:"buy",
+                },
+                {
+                    path:"/sell",
+                    component:_=>import("@components/sell"),
+                    name:"sell",
+                },
+                {
+                    path:"/loan",
+                    component:_=>import("@components/loan"),
+                    name:"loan",
+                },
+            ]
+        },
+        /********************************** */
         newHouse,
         {
             name:"allHouse",
