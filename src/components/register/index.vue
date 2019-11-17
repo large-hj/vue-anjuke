@@ -2,13 +2,13 @@
   <div class="box">
     <div id="login_content">
       <div class="login_username">
-        <input type="text" placeholder="账户名/手机号/Email"  v-model="val1" />
+        <input type="text" placeholder="注册账户名/手机号/Email" v-model="val1" />
       </div>
       <div class="login_password">
-        <input type="password" placeholder="请输入您的密码" v-model="val2" />
+        <input type="password" placeholder="请输入您的注册密码" v-model="val2"/>
       </div>
       <div class="login_btn">
-        <input type="submit" value="注册" @click="submitRegister()" />
+        <input type="submit" @click="register()" value="注册" />
       </div>
     </div> 
   </div>
@@ -16,8 +16,10 @@
 
 
 <script>
-  name:"register"
+
+
 export default {
+   name:"register" ,
   data(){
     return{
       val1:'',
@@ -25,24 +27,33 @@ export default {
 
     }
   },
-  methods:{
-    submitRegister(){
-        let username=this.val1;
-        let password=this.val2;
-        console.log(username)
-        $.ajax({
-            type:"post",
-            url:"users.js/register",
-            data:{
-                username,
-                password
-            },
-          success:(data)=>{
-              console.log(data)
-          }
-        })
-    }
-  }
+   methods:{
+     register(){
+           var _this = this;
+                this.disablebtn = true;
+                this.loginText = "登录中...";
+                //this.$reqs就访问到了main.js中绑定的axios
+                this.$reqs.post("/users.js/register",{
+                        username:this.val1,
+                        password:this.val2
+                }).then(function(data){ 
+                    //成功
+                   alert(data.data.data.info)
+                    _this.disablebtn = false;
+                    _this.loginText = "登录";
+                    if(data.data.success){
+                      // alert(data.data.success)
+                      window.location.href="http://localhost:8080";
+                    }
+                    
+                }).catch(function (error) {
+                    //失败
+                     alert(data.data.data.info)
+                    _this.disablebtn = false;
+                    _this.loginText = "登录"
+                });
+     }
+   }
 };
 </script>
 

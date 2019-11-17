@@ -70,7 +70,7 @@ const userLogin = async (req, res) => {
             if (userData.password == hash.digest("hex")) {
                 // 当登陆成功时候生产token值 并且发送到客户端
                 let token = tokenUtils.sendToken({ username });
-                res.cookies("tokens", token)
+                res.cookie("token", token)
                 res.json({
                     code: 200,
                     errMsg: "",

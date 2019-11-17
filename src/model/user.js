@@ -1,6 +1,6 @@
 const mongoose=require("../utils/database");
 
-const User=mongoose.model("stu",{
+const User=mongoose.model("hello",{
     username:String,
     password:String,
     registerTime:Number,
