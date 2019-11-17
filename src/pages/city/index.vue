@@ -2,6 +2,15 @@
   <div class="city_container" ref="cityContainer">
    
       <div class="city_body" >
+        <div class="title_box">
+            <v-touch tag="i" @tap="handleB()" class="iconfont icon-mjiantou-copy">返回</v-touch>
+            <div class="title">选择城市</div>
+        </div>
+        <div class="cl-c-search">
+          <router-link tag="div" to="/searchCities" class="cl-c-s-btn">
+              <i class="iconfont icon-sousuo"></i>城市/拼音
+          </router-link>
+        </div>
         <!--热门城市-->
         <div class="hot_city">
           <div class="hot_title">热门城市</div>
@@ -36,6 +45,7 @@
         :key="item.id"
       >{{item.index}}</v-touch>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -74,6 +84,9 @@ name: "City",
       let path = this.$route.params.path || "/movie";
       this.$router.push(path);
       this.$store.commit("city/handleUpdateCity",child)
+    },
+    handleB(){
+      this.$router.back();
     }
   }
   
@@ -82,45 +95,72 @@ name: "City",
 </script>
 
 
-<style>
+<style scoped>
 .city_body {
   background: #ebebeb;
+  
 }
-
+.title_box{
+   width:100%;
+  height:.5rem;
+  display: flex;
+ align-items: center;
+}
+.title{
+  font-size: .18rem;
+  text-align: center;
+  line-height: .5rem;
+  background: #e8e8e8;
+  padding-left: .8rem;
+}
+.cl-c-search {
+    height: .5rem;
+    background-color: #e4e4e7;
+    padding: .08rem .22rem;
+    box-sizing: border-box;
+}
+.cl-c-s-btn {
+    background-color: #FFF;
+    border-radius: .05rem;
+    overflow: hidden;
+    height: 100%;
+    line-height: .34rem;
+    /* width: 100%; */
+    text-align: center;
+    font-size: .13rem;
+    color: #969696;
+}
 /*热门城市*/
-.hot_title,
 .city_title_letter {
   line-height: 0.6rem;
   padding-left: 0.26rem;
   font-size: 0.28rem;
 }
-
+.hot_title{
+  font-size: .18rem;
+  
+}
 .hot_city_list,
 .city_list_name {
   width: 96%;
   background: #f5f5f5;
   padding-bottom: 0.16rem;
-  padding-right: 0.6rem;
   display: flex;
   flex-wrap: wrap;
 }
 .hot_city_name {
-    margin-top: 0.3rem;
+    width:100%;
+   line-height: 0.5rem;
     margin-left: 0.26rem;
-    width: 0.9rem;
-    height: 0.3rem;
-    background: #fff;
-    text-align: center;
-    line-height: 0.3rem;
     font-size: 0.16rem;
-    border: 2px solid #e6e6e6;
+    border-bottom: 2px solid #e6e6e6;
 }
 
 .city_list > div {
   width: 100%;
 }
 .city_list_name_item {
- line-height: 0.5rem;
+  line-height: 0.5rem;
     margin-left: 0.26rem;
     width: 100%;
     border-bottom: 2px solid #e6e6e6;

@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import city from "./city"
 import Register from "../components/register"
 import Login from "../components/lo"
+import   newHouse from "./newHouse"
 Vue.use(VueRouter);
 const router = new VueRouter({
     mode:"hash",
@@ -100,6 +101,8 @@ const router = new VueRouter({
                 
             ]
         },
+
+
           /************通过路由走经纪人页面***************** * */
         {
             path:"/broker",
@@ -127,8 +130,9 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
-        // 
-        {
+
+         /************通过路由走免费看房页面***************** * */
+         {
             path:"/mfkf",
             component:_=>import("@pages/freelookhouse"),
             name:"freelookhouse",
@@ -138,8 +142,36 @@ const router = new VueRouter({
                 requiredAuth:false
             },
         },
-
-        // 
+        newHouse,
+        {
+            name:"allHouse",
+            path:"/allHouse",
+            component:_=>import("@pages/allHouse")       
+        },
+        {
+            name:"nowSale",
+            path:"/nowSale",
+            component:_=>import("@pages/nowSale")       
+        },
+        {
+            path:"/houseDetail/:index/:loupan_id",
+            component:_=>import("@pages/houseDetail"),
+            name:"houseDetail",
+            props:true
+        },
+        {
+            path:"/searchhouse",
+            component:_=>import("@pages/searchhouse"),
+            name:"searchhouse"
+        },
+        {
+            path:"/searchCities",
+            component:_=>import("@pages/searchCities"),
+            meta:{
+                flag:false,
+                requiredAuth:false
+            },
+        }
 
     ]
 })
