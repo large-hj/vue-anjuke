@@ -49,7 +49,6 @@ export default {
       async  handleGetNewHouseList(cid){
             let data = await newHouseApi(cid)
             this.newHouseList=[...this.newHouseList,...data.result.rows];
-            sessionStorage.setItem(this.newHouseList,JSON.stringify(this.newHouseList));
        }
    }, 
    mounted() {

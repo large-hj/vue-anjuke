@@ -15,7 +15,9 @@ import { Sticky } from 'vant';
 Vue.use(VueTouch,{name:"v-touch"});
 Vue.config.productionTip = false
 import { Search } from 'vant';
+import { DropdownMenu, DropdownItem } from 'vant';
 
+Vue.use(DropdownMenu).use(DropdownItem);
 Vue.use(Search);
 Vue.use(Sticky);
 new Vue({

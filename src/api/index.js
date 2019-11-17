@@ -102,7 +102,21 @@ export const SearchCityApi = ( cid,kw)=>http({
       kw,
   }
 })
+/**
+ * 
+ * @param:SecondHandApi
+ */
+
+export const SecondHandApi = ( from,page)=>http({
+  method:"get",
+  url:"/bj/sale/",
+  data:{
+      from,
+      page,
+     
+  }
+})
 /* 
-  url:"/jiazhuang/list/case/?lon=&lat=&city_id=14",
+  /sale/all/b15/?page=2",
 */
 
