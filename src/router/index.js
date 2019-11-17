@@ -5,8 +5,6 @@ import Register from "../components/register"
 import Login from "../components/lo"
 import   newHouse from "./newHouse"
 Vue.use(VueRouter);
-
-
 const router = new VueRouter({
     mode:"hash",
     routes:[
@@ -53,6 +51,15 @@ const router = new VueRouter({
             path:"/zxq",
             component:_=>import("@pages/neighborhood"),
             name:"neighborhood",
+            meta:{
+                flag:true,
+                requiredAuth:false
+            },
+        },
+        {
+            path:"/user",
+            component:_=>import("@pages/user"),
+            name:"user",
             meta:{
                 flag:true,
                 requiredAuth:false
@@ -204,17 +211,17 @@ const router = new VueRouter({
 
 
 
-// router.beforeEach((to,from,next)=>{
-//     if(to.path !="/login" && to.meta.requiredAuth){
-//         if(localStorage.getItem("token")){
-//             next();
-//         }else{
-//             next({name:"login",params:{to:to.path}})
-//         }
+router.beforeEach((to,from,next)=>{
+    if(to.path !="/login" && to.meta.requiredAuth){
+        if(localStorage.getItem("token")){
+            next();
+        }else{
+            next({name:"login",params:{to:to.path}})
+        }
 
-//     }else{
-//         next();
-//     }
-// })
+    }else{
+        next();
+    }
+})
 
 export default router;

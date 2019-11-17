@@ -13,6 +13,13 @@
       "unicode_decimal": 58894
     },
     {
+      "icon_id": "166654",
+      "name": "修改",
+      "font_class": "xiugai",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
       "icon_id": "439584",
       "name": "一",
       "font_class": "icon37",
@@ -76,6 +83,13 @@
       "unicode_decimal": 58968
     },
     {
+      "icon_id": "802487",
+      "name": "点评线描",
+      "font_class": "dianpingxianmiao",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
       "icon_id": "810222",
       "name": "箭头",
       "font_class": "jiantou-copy-copy-copy",
@@ -116,6 +130,20 @@
       "font_class": "wujiaoxing_kong",
       "unicode": "e603",
       "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "1288670",
+      "name": "卡号",
+      "font_class": "qiahao",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "1356140",
+      "name": "房源",
+      "font_class": "fangyuan",
+      "unicode": "e610",
+      "unicode_decimal": 58896
     },
     {
       "icon_id": "1450435",
@@ -207,6 +235,13 @@
       "font_class": "paixu",
       "unicode": "e64e",
       "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "10156325",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "e634",
+      "unicode_decimal": 58932
     },
     {
       "icon_id": "11191524",

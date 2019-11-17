@@ -13,6 +13,7 @@
     "babel-plugin-import": "^1.12.2",
     "better-scroll": "^1.15.2",
     "cookie-parser": "^1.4.4",
+    "express": "~4.16.1",
     "core-js": "^3.3.2",
     "mongoose": "^5.7.11",
     "vant": "^2.2.13-beta.0",
