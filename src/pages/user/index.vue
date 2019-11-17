@@ -1,6 +1,7 @@
 <template>
     <div class="box">
         <div class="top">
+            <v-touch tag="i" @tap="handleB()" class="iconfont icon-mjiantou-copy back">返回</v-touch >
             <div class="info">
                 <div class="userPic" @click="handle()">
                     <img :src="urlPic">
@@ -13,13 +14,36 @@
             <span class="iconfont">&#xe610;     我的房源</span>
             <span class="iconfont">&#xe61b;     我的卡卷</span>
             <span class="iconfont">&#xe696;      我的订单</span>
-            <span class="iconfont">&#xe696;      我的优惠</span>
+            <van-coupon-cell
+                :coupons="coupons"
+                :chosen-coupon="chosenCoupon"
+                @click="showList = true"
+            />
+            <van-popup v-model="showList" position="bottom">
+                <van-coupon-list
+                    :coupons="coupons"
+                    :chosen-coupon="chosenCoupon"
+                    :disabled-coupons="disabledCoupons"
+                    @change="onChange"
+                    @exchange="onExchange"
+                />
+            </van-popup>
             <span class="iconfont">&#xe696;      修改密码</span>
         </div>
     </div>
 </template>
 <script>
-
+    const coupon = {
+        available: 1,
+        condition: '无使用门槛\n最多优惠12元',
+        reason: '',
+        value: 150,
+        name: '优惠券名称',
+        startAt: 1489104000,
+        endAt: 1514592000,
+        valueDesc: '1.5',
+        unitDesc: '元'
+    };
 export default {
 name: "user",
 data(){
@@ -27,7 +51,11 @@ data(){
             urlPic:"",
             name:"",
             _id:"",
-            flag:false
+            flag:false,
+            chosenCoupon: -1,
+            coupons: [coupon],
+            disabledCoupons: [coupon],
+            showList:false
     }
 },
   created() {
@@ -47,27 +75,45 @@ data(){
        if(this._id==null){
           
        }
+    },
+    handleB(){
+        this.$router.back("/movie")
+    },
+    onChange(index) {
+      this.showList = false;
+      this.chosenCoupon = index;
+    },
+    onExchange(code) {
+      this.coupons.push(coupon);
     }
   }
   
 };
 
 </script>
-<style scoped>
+<style lang="scss" scoped>
  
     .box .top{
         width: 100%;
         height:1.25rem;
         background: #62ab00; 
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        /* flex-direction: column; */
+        justify-content:left;
         align-items: center;
-    }
-    .box .top .info{
+        .back{
+            margin-top:-.6rem;
+            font-size: .14rem;
+            
+        }
+         .info{
         width: 1rem;
         height:1rem;
-      
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left:.7rem;
+        }
     }
     .userPic{
         width:100%;
@@ -105,5 +151,13 @@ data(){
         justify-content: flex-start;
         align-items: center;
         font-size: 0.14rem;
+    }
+    .van-cell {
+         width: 100%;
+        height: 0.4rem;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
     }
 </style>

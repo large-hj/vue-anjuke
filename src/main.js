@@ -16,7 +16,9 @@ Vue.use(VueTouch,{name:"v-touch"});
 Vue.config.productionTip = false
 import { Search } from 'vant';
 import { DropdownMenu, DropdownItem } from 'vant';
+import { CouponCell, CouponList } from 'vant';
 
+Vue.use(CouponCell).use(CouponList);
 Vue.use(DropdownMenu).use(DropdownItem);
 Vue.use(Search);
 Vue.use(Sticky);
