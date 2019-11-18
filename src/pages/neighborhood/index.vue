@@ -20,38 +20,41 @@
         </div>
       </div>
       <!-- 导航 -->
-      <ul class="nav1">
-        <li>
-          <router-link tag="a" to="/q_answers">百度问答</router-link>
-        </li>
-        <li>
-          <a>小区</a>
-        </li>
-        <li>
-          <a>房价</a>
-        </li>
-        <li>
-          <router-link tag="a" to="/broker">经济人</router-link>
-        </li>
-        <li>
-          <a>估价</a>
-        </li>
-        <li>
-          <a>更多</a>
-        </li>
-      </ul>
+      
+        <ul class="nav1">
+          <li>
+            <router-link tag="a" to="/q_answers">百度问答</router-link>
+          </li>
+          <li>
+            <a>小区</a>
+          </li>
+          <li>
+            <a>房价</a>
+          </li>
+          <li>
+            <router-link tag="a" to="/broker">经济人</router-link>
+          </li>
+          <li>
+            <a>估价</a>
+          </li>
+          <li>
+            <a>更多</a>
+          </li>
+        </ul>
+     
     </div>
+    <van-sticky>
     <div>
       <van-dropdown-menu class="ui">
         <van-dropdown-item v-model="value1" :options="option1"></van-dropdown-item>
         <van-dropdown-item v-model="value2" :options="option2"></van-dropdown-item>
         <van-dropdown-item v-model="value3" :options="option3"></van-dropdown-item>
         <div @click="handlesort()">
-
-          <van-dropdown-item v-model="value4" :options="option4" ></van-dropdown-item>
+          <van-dropdown-item v-model="value4" :options="option4"></van-dropdown-item>
         </div>
       </van-dropdown-menu>
     </div>
+     </van-sticky>
     <!-- list页 -->
     <Alley-scroll ref="scroll">
       <div class="house_body">
@@ -92,8 +95,8 @@
   </div>
 </template>
 <script>
-import Vue from 'vue';
-import { DropdownMenu, DropdownItem } from 'vant';
+import Vue from "vue";
+import { DropdownMenu, DropdownItem } from "vant";
 Vue.use(DropdownMenu).use(DropdownItem);
 import { neighborhoodApi } from "@api/neighborhood";
 export default {
@@ -110,19 +113,19 @@ export default {
         { text: "区域", value: 0 },
         { text: "朝阳", value: 1 },
         { text: "海淀", value: 2 },
-        { text: "海淀", value: 3 },
+        { text: "海淀", value: 3 }
       ],
       option2: [
         { text: "价格", value: "a" },
         { text: "8000元以下", value: "b" },
         { text: "8000-1万", value: "c" },
-        { text: "1-1.5万", value: "d" },
+        { text: "1-1.5万", value: "d" }
       ],
       option3: [
         { text: "特色", value: "a" },
         { text: "绿化优美", value: "b" },
         { text: "别墅", value: "c" },
-        { text: "次新房", value: "d" },
+        { text: "次新房", value: "d" }
       ],
       option4: [
         { text: "排序", value: "a" },
@@ -132,8 +135,8 @@ export default {
     };
   },
   /********************************下拉刷新 */
-  watch:{
-    lists(){
+  watch: {
+    lists() {
       // console.log("更新了");
       this.$refs.scroll.handlefinishPullDown();
     }
@@ -149,33 +152,27 @@ export default {
       //页面渲染
       this.lists = data.data.rows;
       console.log(data.data.rows);
-      
     },
-    handlebacksy(){
+    handlebacksy() {
       this.$router.back();
     },
     /**********************排序 */
-   
-  handlesort(){
-    let value=this.option4[0].value;
-    
-  
-    
-   
-  }
-  },
-/**********下拉刷新***************/
-    mounted(){
-      this.$refs.scroll.handlepullingDown(()=>{
-        var arr = [2,3,4,5,6,8];
-        var index =parseInt(0+Math.random()*6);
-        this.handleGetNewHouseList(arr[index]);
-      });
 
-      this.$refs.scroll.handleScroll();
+    handlesort() {
+      let value = this.option4[0].value;
+    }
+  },
+  /**********下拉刷新***************/
+  mounted() {
+    this.$refs.scroll.handlepullingDown(() => {
+      var arr = [2, 3, 4, 5, 6, 8];
+      var index = parseInt(0 + Math.random() * 6);
+      this.handleGetNewHouseList(arr[index]);
+    });
+
+    this.$refs.scroll.handleScroll();
   }
   /******************************/
-  
 };
 </script>
 <style scoped>

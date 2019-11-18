@@ -17,10 +17,12 @@
       <div class="nav1">区域<i class="iconfont">&#xe6aa;</i></div>
       <div class="nav2">服务<i class="iconfont">&#xe6aa;</i></div>
     </div>-->
+    <van-sticky>
     <van-dropdown-menu>
       <van-dropdown-item v-model="value1" :options="option1" />
       <van-dropdown-item v-model="value2" :options="option2" />
     </van-dropdown-menu>
+    </van-sticky>
     <div class="hide1"></div>
     <!-- 内容 -->
     <div class="content_broker" v-for="(item,index) in list" :key="index">
