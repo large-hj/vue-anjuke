@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import {SecondHandApi} from "@api/index"
+import {SecondHandApi} from "@api/newHouse"
 export default {
     name:"secondList",
     data(){ 

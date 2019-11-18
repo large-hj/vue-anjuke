@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { newHouseApi } from "@api/index";
+import { newHouseApi } from "@api/newHouse";
 export default {
     name:"HouseList",
     data(){
@@ -48,6 +48,7 @@ export default {
    methods:{
       async  handleGetNewHouseList(cid){
             let data = await newHouseApi(cid)
+            console.log(data)
             this.newHouseList=[...this.newHouseList,...data.result.rows];
        }
    }, 

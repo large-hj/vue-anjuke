@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import {searchApi} from "@api/index"
+import {searchApi} from "@api/newHouse"
 import {throttle} from '@utils/searchThrottle'
 
 export default {
@@ -74,8 +74,8 @@ export default {
          console.log(data)
       },300)
         if(newVal){
-           this.flag=!this.flag,
-           this.status=!this.status
+           this.flag=true,
+           this.status=false
         }
        
     }

@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { detailApi } from "@api/index";
+import { detailApi } from "@api/newHouse";
 
 export default {
     name: "HouseDetail",

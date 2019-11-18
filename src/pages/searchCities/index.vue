@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { SearchCityApi } from "@api/index";
+import { SearchCityApi } from "@api/newHouse";
 import {throttle} from '@utils/searchThrottle'
 export default {
   name: "SearchCities",

@@ -34,14 +34,14 @@ export default {
         })
     },
     methods:{
-        // handleScroll(){
-        //     this.scroll.on("scroll",this.handleScrollCb)
-        // },
-        // handleScrollCb({y}){
-        //     if(y>20){
-        //         this.loadingFlag=true;
-        //     }
-        // },
+        handleScroll(){
+            this.scroll.on("scroll",this.handleScrollCb)
+        },
+        handleScrollCb({y}){
+            if(y>20){
+                this.loadingFlag=true;
+            }
+        },
         handlepullingDown(callback){
             this.scroll.on("pullingDown",()=>{
                 callback();

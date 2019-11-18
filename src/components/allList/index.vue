@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { newHouseApi } from  "@api/index";
+import { newHouseApi } from  "@api/newHouse";
 export default {
   name: "AllList",
   props:["index","loupan_id"],
