@@ -126,8 +126,10 @@ const updatePassword = async (req, res) => {
             const has = crypto.createHash("sha256");
             has.update(newPassword);
             let pass = (has.digest("hex"));
-            let data = await userModel.UpdatePassword(name, pass);
-            if (data) {
+            let updatedata = await userModel.UpdatePassword(name, pass);
+           
+            if (updatedata) {
+                 console.log("hello")
                 res.json({
                     code: 200,
                     errMsg: "",

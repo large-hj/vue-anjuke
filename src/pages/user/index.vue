@@ -13,27 +13,33 @@
             <span class="iconfont">&#xe610;     我的房源</span>
             <span class="iconfont">&#xe61b;     我的卡卷</span>
             <span class="iconfont">&#xe696;      我的订单</span>
-            <span class="iconfont">&#xe696;      我的优惠</span>
+            <span class="iconfont" @click="handleExit()">&#xe696;      退出登录</span>
             <span class="iconfont">&#xe696;      修改密码</span>
         </div>
     </div>
 </template>
 <script>
+import Vue from 'vue';
+import { Popup} from 'vant';
+import { Cell } from 'vant';
 
-export default {
+Vue.use(Popup);
+Vue.use(Cell);
+export default{
 name: "user",
 data(){
     return{
             urlPic:"",
             name:"",
             _id:"",
-            flag:false
+            flag:false,
+             show: false,
     }
 },
   created() {
-       this.urlPic=sessionStorage.getItem("urlPic");
-       this.name=sessionStorage.getItem("name");
-       this._id=sessionStorage.getItem("id");
+       this.urlPic=Cookies.get("urlPic");
+       this.name=Cookies.get("name");
+       this._id=Cookies.get("id")
        if(this._id==null){
            this.flag=true;
        }
@@ -44,9 +50,18 @@ data(){
   
    methods: {
     handle(){
-       if(this._id==null){
-          
+       if(this._id==null){ 
        }
+    },
+    handleExit(){
+        alert("hello")
+        Cookies.remove("token");
+        Cookies.remove("name");
+        Cookies.remove("id");
+        Cookies.remove("urlPic");
+        window.location.href="http://localhost:8080/#/lore"
+     
+        
     }
   }
   
@@ -54,7 +69,6 @@ data(){
 
 </script>
 <style scoped>
- 
     .box .top{
         width: 100%;
         height:1.25rem;
