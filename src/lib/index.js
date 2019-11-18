@@ -1,6 +1,6 @@
 import Header from "./header"
 import bscroll from "./bscroll"
-import Loading from "./loading"
+// import Loading from "./loading"
 import MessageBox from "./messageBox"
 
 

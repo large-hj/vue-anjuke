@@ -7,7 +7,7 @@ const userController=require("../controller/user")
 router.post("/register",userController.userRegister);
 // 登陆接口
 router.post("/login",userController.userLogin)
-router.post("/password",userController.updatePassword)
+router.post("/password",userController.userPassword)
 router.post("/urlPic",userController.userPic)
 // 用户管理接口
 router.post("/Inter",userController.userInter)

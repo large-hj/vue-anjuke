@@ -29,7 +29,7 @@ const userRegister = async (req, res) => {
         // 用户的随机名称
         let name = Math.random().toString(36).substr(2, 8);
         // 默认用户头像
-        let urlPic = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572263744249&di=1435c301091ec455c977e9cb95a439d4&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01460b57e4a6fa0000012e7ed75e83.png%401280w_1l_2o_100sh.png";
+        let urlPic = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574006038112&di=43d970dc85af19b2a9e145e633be6bf2&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201409%2F02%2F20140902101956_RxeuM.jpeg";
         let saveData = await userModel.userSave({ username, password: hash.digest("hex"), status, registerTime, name, urlPic });
         if (saveData) {
             res.json({
@@ -108,58 +108,54 @@ const userLogin = async (req, res) => {
     }
 }
 
-const updatePassword = async (req, res) => {
-    let { name, oldPassword, newPassword } = req.body;
-
-    // console.log(name)
-    let data = await userModel.userOldPassword(name);
-    // console.log(data.password)
-    if (!data) {
-
-    } else {
-        const hashs = crypto.createHash("sha256");
-        // 对数据进行加密
-        hashs.update(oldPassword);
-        // 拿到加密后的数据
-        // 当密码加密以后与数据库密码相同时
-        if (data.password == hashs.digest("hex")) {
-            const has = crypto.createHash("sha256");
-            has.update(newPassword);
-            let pass = (has.digest("hex"));
-            let data = await userModel.UpdatePassword(name, pass);
-            if (data) {
-                res.json({
-                    code: 200,
-                    errMsg: "",
-                    data: {
-                        info: "修改成功",
-                        status:1
-                    }
-                })
-            } else {
-                res.json({
-                    code: 200,
-                    errMsg: "",
-                    data: {
-                        info: "修改失败"
-                    }
-                })
-            }
+//修改密码
+const userPassword = async (req, res) => {
+    let { id, oldpassword, newpassword } = req.body;
+    let data = await userModel.userPass(id);//给model传参
+    // console.log(id,oldpassword, newpassword );//验证路由是否走通
+    // console.log(data)
+    const hash1 = crypto.createHash('sha256');
+    // //加密 3、对数据进行加密
+    hash1.update(oldpassword);
+    // // console.log(oldpassword)
+    if (data.password == hash1.digest('hex')) {
+        const newhash = crypto.createHash('sha256');
+        // //加密 3、对数据进行加密
+        newhash.update(newpassword);
+        let pass = newhash.digest('hex')
+        let updatedata = userModel.updatePass(id, pass);
+        console.log(updatedata)
+        if (updatedata) {
+            res.json({
+                code: 200,
+                errMsg: "",
+                data: {
+                    info: "密码修改成功",
+                    status: 1,
+                    data: data
+                }
+            })
         }else{
             res.json({
                 code: 200,
                 errMsg: "",
                 data: {
-                    info: "原密码错误haha",
-                    status:0
-                    
-
+                    info: "密码修改失败",
+                    status: 0
                 }
             })
         }
+    }else{
+        res.json({
+            code: 200,
+            errMsg: "",
+            data: {
+                info: "原密码错误",
+                status: 1,
+            }
+        })
     }
 }
-
 // 用户头像
 const userPic = async (req, res) => {
     let {Logo,name } = req.body;
@@ -214,7 +210,7 @@ const userInter = async (req, res) => {
 module.exports = {
     userRegister,
     userLogin,
-    updatePassword,
+    userPassword,
     userPic,
     userInter
 }

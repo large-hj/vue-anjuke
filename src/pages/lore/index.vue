@@ -1,12 +1,12 @@
 <template>
   <div class="box">
     <div class="header">
-      <div class="logo">
+      <router-link tag="div" to="/movie" class="logo">
         <img
           src="https://pages.anjukestatic.com/usersite/touch/img/user/login/icon_logo@3x.png"
           alt
         />
-      </div>
+      </router-link>
     </div>
 
       <keep-alive>
