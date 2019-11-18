@@ -56,7 +56,7 @@ export default {
         {
           title: "二手房",
           img: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3851715675,1701114100&fm=26&gp=0.jpg",
-          path:"/esf"
+          path:"/secondHand"
         },
         {
           title: "租房",

@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     login() {
-       
+      //  console.log(this.Cookies.get("token"))
 
       alert(1);
       var _this = this;
@@ -49,7 +49,8 @@ export default {
               Cookies.set("urlPic", data.data.data.data.urlPic);
               Cookies.set("id", data.data.data.data._id);
             }
-             window.location.href = "http://localhost:8080";
+
+            window.location.href = "http://localhost:8080";
           }
         })
         .catch(function(data) {

@@ -18,15 +18,12 @@ const userSave=(userInfo,cb)=>{
     let user=new User(userInfo);
     return user.save()
 }
-// 查询原密码
-const userOldPassword=(name)=>{
-    return User.findOne({name:name});
+const userPass=(id)=>{
+    return  User.findOne({_id:id});
 }
-// 修改密码update({_id:id},{$set:booksInfo});
-// db.表名.update({key:val},{$set:{key:val}})  修改数据
-//导出模块
-const UpdatePassword=(name,newPassword)=>{
-    return User.update({name:name},{$set:{password:newPassword}});
+
+const updatePass=(id,newpassword)=>{
+    return  User.update({_id:id},{password:newpassword})
 }
 const UpdatePic=(name,urlPic)=>{
     return User.update({name:name},{$set:{urlPic:urlPic}});
@@ -40,8 +37,8 @@ const userInter=(id)=>{
 module.exports={
     userFind,
     userSave,
-    userOldPassword,
-    UpdatePassword,
+    userPass,
+    updatePass,
     UpdatePic,
     userInter
 }

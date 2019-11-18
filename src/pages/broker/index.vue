@@ -17,13 +17,15 @@
       <div class="nav1">区域<i class="iconfont">&#xe6aa;</i></div>
       <div class="nav2">服务<i class="iconfont">&#xe6aa;</i></div>
     </div>-->
+    <van-sticky>
     <van-dropdown-menu>
       <van-dropdown-item v-model="value1" :options="option1" />
       <van-dropdown-item v-model="value2" :options="option2" />
     </van-dropdown-menu>
+    </van-sticky>
     <div class="hide1"></div>
     <!-- 内容 -->
-    <div class="content" v-for="(item,index) in list" :key="index">
+    <div class="content_broker" v-for="(item,index) in list" :key="index">
       <div class="content1">
         <img :src="item.user_photo" />
       </div>
@@ -129,7 +131,7 @@ export default {
   color: #333333;
 }
 /* list */
-.content {
+.content_broker {
   height: 1.3rem;
   padding: 0.13rem;
   display: flex;

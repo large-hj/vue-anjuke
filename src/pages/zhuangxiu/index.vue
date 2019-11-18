@@ -14,7 +14,9 @@
       </div>
     </div>
 <!-- 广告 -->
-    <div class="banner"></div>
+    <div class="banner">
+      <img src="https://pic6.ajkimg.com/news/0fc30011e1f3af9e5f16fbc1e6e8ec2a" alt="">
+    </div>
 <!--  -->
 <div class="cons">
         <div class="top">
@@ -156,9 +158,12 @@ export default {
         }
         .banner{
             width: 95%;
-            height: 0.5rem;
-            background: red url("https://pic6.ajkimg.com/news/0fc30011e1f3af9e5f16fbc1e6e8ec2a?imageMogr2/format/jpg/thumbnail/1005x180")no-repeat;
+            height: 1rem;
             margin: 0 auto;
+        }
+        .banner img{
+          width:100%;
+          height: 100%;
         }
       .cons {
             width: 100%;
