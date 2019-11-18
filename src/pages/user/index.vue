@@ -100,13 +100,13 @@ export default {
     },
     Updatepassword(){
       console.log(this.v1,this.v2,this.v3)
-     var  id=Cookies.get("id")
-      console.log(id)
-            this.$reqs.post("/users.js/password", {
-            id,
-            oldpassword: this.val1,
-            newpassword: this.val2
-        })
+    //   name=Cookies.get("name")
+      console.log(name)
+        //     this.$reqs.post("/users.js/password", {
+        //     name,
+        //     oldpassword: this.val1,
+        //     newpassword: this.val2
+        // })
         // .then(function(data) {
         //   //成功
         //   console.log(data);
